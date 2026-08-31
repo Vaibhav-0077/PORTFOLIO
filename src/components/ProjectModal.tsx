@@ -41,7 +41,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#08090B]/80 dark:bg-[#000000]/85 backdrop-blur-sm cursor-zoom-out"
+            className="fixed inset-0 bg-[#060709]/85 dark:bg-[#000000]/90 backdrop-blur-md cursor-zoom-out"
           />
 
           {/* Modal Container */}
@@ -50,12 +50,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: 'spring', damping: 25, stiffness: 280 }}
-            className="relative w-full max-w-4xl rounded-3xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden shadow-2xl relative z-10 flex flex-col max-h-[85vh] theme-transition"
+            className="relative w-full max-w-4xl rounded-3xl border border-border-light dark:border-[#222634] bg-surface-light dark:bg-[#0D0F14] overflow-hidden shadow-2xl dark:shadow-[0_25px_60px_rgba(0,0,0,0.85)] relative z-10 flex flex-col max-h-[85vh] theme-transition"
           >
             {/* Header Info */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border-light dark:border-border-dark bg-elevated-light/40 dark:bg-[#111317]">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-border-light dark:border-[#1E222D] bg-elevated-light/40 dark:bg-[#12141C]">
               <div>
-                <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-accent-brand">
+                <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-accent-brand dark:text-purple-400">
                   Case Study // {category}
                 </span>
                 <h2 className="font-display font-bold text-xl sm:text-2xl text-text-primary-light dark:text-text-primary-dark">
@@ -64,7 +64,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
               </div>
               <button
                 onClick={onClose}
-                className="p-2 rounded-full border border-border-light dark:border-border-dark hover:border-accent-brand dark:hover:border-accent-brand text-text-secondary-light dark:text-text-secondary-dark hover:text-accent-brand dark:hover:text-accent-brand transition-colors duration-300 cursor-pointer"
+                className="p-2 rounded-full border border-border-light dark:border-[#242836] bg-surface-light dark:bg-[#181A24] text-text-secondary-light dark:text-text-secondary-dark hover:text-accent-brand dark:hover:text-purple-300 transition-colors duration-300 cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -75,7 +75,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
             <div className="flex-grow p-6 sm:p-8 overflow-y-auto no-scrollbar space-y-8">
               {/* Top Intro Summary */}
               <div className="space-y-3">
-                <p className="text-base sm:text-lg font-semibold text-accent-secondary">
+                <p className="text-base sm:text-lg font-semibold text-accent-secondary dark:text-sky-400">
                   {subtitle}
                 </p>
                 
@@ -84,7 +84,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                   {tech.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded bg-elevated-light dark:bg-elevated-dark border border-border-light dark:border-border-dark text-text-secondary-light dark:text-text-secondary-dark text-[11px] font-mono"
+                      className="px-2.5 py-1 rounded bg-elevated-light dark:bg-[#161822] border border-border-light dark:border-[#242834] text-text-secondary-light dark:text-purple-200 text-[11px] font-mono"
                     >
                       {tag}
                     </span>
@@ -93,25 +93,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
               </div>
 
               {/* Grid: Problem & Solution Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-border-light/60 dark:border-border-dark/60 pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-border-light/60 dark:border-[#1E222D] pt-6">
                 {/* Problem */}
-                <div className="space-y-3 p-5 rounded-2xl bg-rose-500/[0.02] dark:bg-rose-500/[0.01] border border-rose-500/10">
-                  <h3 className="font-display font-bold text-sm text-rose-500 flex items-center gap-2">
+                <div className="space-y-3 p-5 rounded-2xl bg-rose-500/[0.02] dark:bg-rose-500/[0.04] border border-rose-500/10 dark:border-rose-500/25">
+                  <h3 className="font-display font-bold text-sm text-rose-500 dark:text-rose-400 flex items-center gap-2">
                     <ShieldAlert className="w-4.5 h-4.5" />
                     The Problem
                   </h3>
-                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark">
+                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark font-sans">
                     {problem}
                   </p>
                 </div>
 
                 {/* Solution */}
-                <div className="space-y-3 p-5 rounded-2xl bg-emerald-500/[0.02] dark:bg-emerald-500/[0.01] border border-emerald-500/10">
-                  <h3 className="font-display font-bold text-sm text-emerald-500 flex items-center gap-2">
+                <div className="space-y-3 p-5 rounded-2xl bg-emerald-500/[0.02] dark:bg-emerald-500/[0.04] border border-emerald-500/10 dark:border-emerald-500/25">
+                  <h3 className="font-display font-bold text-sm text-emerald-500 dark:text-emerald-400 flex items-center gap-2">
                     <Award className="w-4.5 h-4.5" />
                     The Solution
                   </h3>
-                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark">
+                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark font-sans">
                     {solution}
                   </p>
                 </div>
@@ -124,8 +124,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {features.map((feat) => (
-                    <div key={feat} className="flex gap-3 p-4 rounded-xl border border-border-light dark:border-border-dark bg-elevated-light/30 dark:bg-elevated-dark/20 text-xs sm:text-[13px] text-text-secondary-light dark:text-text-secondary-dark">
-                      <CheckCircle className="w-4 h-4 text-accent-brand shrink-0 mt-0.5" />
+                    <div key={feat} className="flex gap-3 p-4 rounded-xl border border-border-light dark:border-[#222634] bg-elevated-light/30 dark:bg-[#151722] text-xs sm:text-[13px] text-text-secondary-light dark:text-text-secondary-dark font-sans">
+                      <CheckCircle className="w-4 h-4 text-accent-brand dark:text-purple-400 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -133,12 +133,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
               </div>
 
               {/* Grid: Challenges & Learnings */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-border-light/60 dark:border-border-dark/60 pt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-border-light/60 dark:border-[#1E222D] pt-6">
                 <div className="space-y-2">
                   <h3 className="font-display font-bold text-sm text-text-primary-light dark:text-text-primary-dark">
                     Technical Challenges
                   </h3>
-                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark">
+                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark font-sans">
                     {challenges}
                   </p>
                 </div>
@@ -146,7 +146,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                   <h3 className="font-display font-bold text-sm text-text-primary-light dark:text-text-primary-dark">
                     Key Takeaways &amp; Learnings
                   </h3>
-                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark">
+                  <p className="text-[13px] leading-relaxed text-text-secondary-light dark:text-text-secondary-dark font-sans">
                     {learned}
                   </p>
                 </div>
@@ -154,12 +154,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
             </div>
 
             {/* Sticky Actions Footer */}
-            <div className="px-6 py-4 border-t border-border-light dark:border-border-dark bg-elevated-light/40 dark:bg-[#111317] flex items-center justify-end gap-4">
+            <div className="px-6 py-4 border-t border-border-light dark:border-[#1E222D] bg-elevated-light/40 dark:bg-[#12141C] flex items-center justify-end gap-4">
               <a
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full border border-border-light dark:border-border-dark hover:border-accent-brand dark:hover:border-accent-brand bg-surface-light dark:bg-surface-dark text-text-primary-light dark:text-text-primary-dark text-xs sm:text-sm font-medium tracking-wide flex items-center gap-2 transition-all duration-300 cursor-pointer"
+                className="px-5 py-2.5 rounded-full border border-border-light dark:border-[#282C3C] hover:border-accent-brand dark:hover:border-purple-400 bg-surface-light dark:bg-[#181A24] text-text-primary-light dark:text-text-primary-dark text-xs sm:text-sm font-medium tracking-wide flex items-center gap-2 transition-all duration-300 cursor-pointer"
               >
                 <Github className="w-4 h-4" />
                 Inspect Code

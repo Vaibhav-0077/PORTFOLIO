@@ -9,7 +9,7 @@ export const About: React.FC = () => {
 
   return (
     <section id="about" className="py-24 relative overflow-hidden theme-transition">
-      {/* Background Subtle Noise Layer */}
+      {/* Background Subtle Noise & Grid Layer */}
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
       <div className="absolute inset-0 bg-grid opacity-25 pointer-events-none" />
 
@@ -35,7 +35,7 @@ export const About: React.FC = () => {
         </motion.div>
 
         {/* View Selector Tabs (Mobile & Tablet Toggle) */}
-        <div className="flex lg:hidden items-center justify-center space-x-2 p-1.5 rounded-full border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark max-w-xs mx-auto">
+        <div className="flex lg:hidden items-center justify-center space-x-2 p-1.5 rounded-full border border-border-light dark:border-[#222634] bg-surface-light dark:bg-[#101217] max-w-xs mx-auto">
           <button
             onClick={() => setActiveTab('profile')}
             className={`flex-1 py-2 px-4 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
@@ -74,19 +74,19 @@ export const About: React.FC = () => {
             {/* Main Profile Showcase Box */}
             <motion.div
               variants={itemReveal}
-              className="p-6 sm:p-8 rounded-3xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark shadow-xl relative overflow-hidden space-y-6"
+              className="p-6 sm:p-8 rounded-3xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden space-y-6"
             >
               {/* Subtle background glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent-brand/5 dark:bg-accent-brand/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-tr from-purple-600/20 via-indigo-600/10 to-cyan-500/10 rounded-full blur-3xl pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-500" />
 
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
                 {/* Profile Image Frame */}
                 <div className="relative group shrink-0">
                   {/* Glowing border ring */}
-                  <div className="absolute -inset-1.5 bg-gradient-to-r from-accent-brand to-accent-secondary rounded-2xl blur-sm opacity-40 group-hover:opacity-80 transition duration-500" />
+                  <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-500 via-accent-brand to-cyan-400 rounded-2xl blur-sm opacity-60 dark:opacity-80 group-hover:opacity-100 transition duration-500 dark:shadow-[0_0_25px_rgba(139,92,246,0.4)]" />
                   
                   {/* Avatar Image */}
-                  <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-xl overflow-hidden border border-border-light dark:border-border-dark bg-elevated-light dark:bg-elevated-dark">
+                  <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-xl overflow-hidden border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#151722]">
                     <img
                       src={PERSONAL_INFO.avatar}
                       alt={PERSONAL_INFO.name}
@@ -102,25 +102,25 @@ export const About: React.FC = () => {
                       {PERSONAL_INFO.name}
                     </h3>
                     {/* Status Badge */}
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border border-emerald-500/20">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                       {PERSONAL_INFO.status}
                     </span>
                   </div>
 
-                  <p className="text-xs font-semibold text-accent-brand">
+                  <p className="text-xs font-semibold text-accent-brand dark:text-purple-400">
                     {PERSONAL_INFO.title}
                   </p>
 
                   <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs text-text-secondary-light dark:text-text-secondary-dark">
-                    <MapPin className="w-3.5 h-3.5 text-accent-brand shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-accent-brand dark:text-purple-400 shrink-0" />
                     <span>{PERSONAL_INFO.location}</span>
                   </div>
                 </div>
               </div>
 
               {/* Bio Paragraph */}
-              <p className="text-xs sm:text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed relative z-10">
+              <p className="text-xs sm:text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed relative z-10 font-sans">
                 {PERSONAL_INFO.bio}
               </p>
 
@@ -129,7 +129,7 @@ export const About: React.FC = () => {
                 {PERSONAL_INFO.stats.map((st) => (
                   <div
                     key={st.label}
-                    className="p-3 rounded-xl border border-border-light dark:border-border-dark bg-elevated-light/50 dark:bg-elevated-dark/50 text-center space-y-0.5"
+                    className="p-3 rounded-xl border border-border-light dark:border-[#222634] bg-elevated-light/50 dark:bg-[#151722] text-center space-y-0.5"
                   >
                     <div className="text-[10px] font-mono text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wide">
                       {st.label}
@@ -150,9 +150,9 @@ export const About: React.FC = () => {
                   {PERSONAL_INFO.interests.map((interest) => (
                     <span
                       key={interest}
-                      className="px-2.5 py-1 rounded bg-accent-brand/5 border border-accent-brand/20 text-accent-brand text-[11px] font-mono font-medium flex items-center gap-1.5"
+                      className="px-2.5 py-1 rounded bg-accent-brand/5 dark:bg-purple-950/40 border border-accent-brand/20 dark:border-purple-500/30 text-accent-brand dark:text-purple-300 text-[11px] font-mono font-medium flex items-center gap-1.5"
                     >
-                      <Sparkles className="w-3 h-3" />
+                      <Sparkles className="w-3 h-3 text-purple-400" />
                       {interest}
                     </span>
                   ))}
@@ -162,29 +162,29 @@ export const About: React.FC = () => {
 
             {/* Core Values Cards */}
             <motion.div variants={itemReveal} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex gap-3.5 p-4 rounded-2xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hover:border-accent-brand/40 dark:hover:border-accent-brand/40 transition-all duration-300">
-                <div className="p-2 h-fit rounded-lg bg-accent-brand/10 text-accent-brand shrink-0">
+              <div className="flex gap-3.5 p-4 rounded-2xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] hover:border-accent-brand/40 dark:hover:border-accent-brand/50 dark:hover:shadow-[0_0_20px_rgba(139,92,246,0.12)] transition-all duration-300">
+                <div className="p-2 h-fit rounded-lg bg-accent-brand/10 dark:bg-purple-500/10 text-accent-brand dark:text-purple-400 shrink-0">
                   <Code className="w-4.5 h-4.5" />
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-xs text-text-primary-light dark:text-text-primary-dark">
                     Frontend Craftsmanship
                   </h4>
-                  <p className="text-[11px] text-text-secondary-light dark:text-text-secondary-dark mt-1 leading-normal">
+                  <p className="text-[11px] text-text-secondary-light dark:text-text-secondary-dark mt-1 leading-normal font-sans">
                     Interactive interfaces with React, TypeScript, and smooth CSS animations.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-3.5 p-4 rounded-2xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hover:border-accent-brand/40 dark:hover:border-accent-brand/40 transition-all duration-300">
-                <div className="p-2 h-fit rounded-lg bg-accent-brand/10 text-accent-brand shrink-0">
+              <div className="flex gap-3.5 p-4 rounded-2xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] hover:border-accent-brand/40 dark:hover:border-accent-brand/50 dark:hover:shadow-[0_0_20px_rgba(139,92,246,0.12)] transition-all duration-300">
+                <div className="p-2 h-fit rounded-lg bg-accent-brand/10 dark:bg-purple-500/10 text-accent-brand dark:text-purple-400 shrink-0">
                   <Database className="w-4.5 h-4.5" />
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-xs text-text-primary-light dark:text-text-primary-dark">
                     Backend Reliability
                   </h4>
-                  <p className="text-[11px] text-text-secondary-light dark:text-text-secondary-dark mt-1 leading-normal">
+                  <p className="text-[11px] text-text-secondary-light dark:text-text-secondary-dark mt-1 leading-normal font-sans">
                     REST APIs, Node.js routers, MongoDB schemas, and payment integrations.
                   </p>
                 </div>
@@ -203,9 +203,9 @@ export const About: React.FC = () => {
             }`}
           >
             {/* Mock macOS IDE Window */}
-            <div className="w-full h-full rounded-3xl overflow-hidden border border-border-light dark:border-border-dark bg-[#0F1015] shadow-2xl relative flex flex-col justify-between">
+            <div className="w-full h-full rounded-3xl overflow-hidden border border-border-light dark:border-[#222634] bg-[#0F1015] dark:bg-[#0B0C0E] shadow-2xl dark:shadow-[0_15px_45px_rgba(0,0,0,0.6)] relative flex flex-col justify-between">
               {/* Title bar */}
-              <div className="flex items-center justify-between px-5 py-3.5 bg-[#16171E] border-b border-border-dark/40 select-none">
+              <div className="flex items-center justify-between px-5 py-3.5 bg-[#16171E] dark:bg-[#12141C] border-b border-border-dark/40 dark:border-[#222634] select-none">
                 {/* Dots */}
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-[#FF5F56] shadow-sm" />
@@ -214,7 +214,7 @@ export const About: React.FC = () => {
                 </div>
                 {/* File Title */}
                 <div className="flex items-center space-x-2 text-xs font-mono text-text-secondary-dark tracking-wide">
-                  <Terminal className="w-3.5 h-3.5 text-accent-brand" />
+                  <Terminal className="w-3.5 h-3.5 text-accent-brand dark:text-purple-400" />
                   <span>vaibhav.ts</span>
                 </div>
                 {/* Empty block to center title */}
@@ -287,9 +287,9 @@ export const About: React.FC = () => {
               </div>
 
               {/* Status bar */}
-              <div className="px-5 py-3 bg-[#14151B] border-t border-border-dark/40 flex items-center justify-between text-[11px] font-mono text-text-secondary-dark/60 select-none">
+              <div className="px-5 py-3 bg-[#14151B] dark:bg-[#111219] border-t border-border-dark/40 dark:border-[#222634] flex items-center justify-between text-[11px] font-mono text-text-secondary-dark/60 select-none">
                 <span className="flex items-center gap-1.5 text-emerald-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   TypeScript v5.0 Ready
                 </span>
                 <span>UTF-8</span>

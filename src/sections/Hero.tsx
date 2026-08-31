@@ -100,6 +100,9 @@ export const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
           className="lg:col-span-5 relative w-full flex items-center justify-center mt-6 lg:mt-0"
         >
+          {/* Glowing Radial Backdrop behind 3D Canvas in Dark Mode */}
+          <div className="absolute w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full bg-gradient-to-tr from-accent-brand/20 via-purple-600/10 to-cyan-500/15 blur-3xl pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-500" />
+
           <CanvasContainer />
 
           {/* Floating technical labels around the 3D container (Desktop only) */}
@@ -108,7 +111,7 @@ export const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-12 left-10 px-2.5 py-1 rounded border border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm shadow-sm"
+              className="absolute top-12 left-10 px-3 py-1.5 rounded-xl border border-border-light dark:border-[#262B38] bg-surface-light/85 dark:bg-[#12141C]/90 backdrop-blur-md shadow-sm dark:shadow-[0_0_20px_rgba(139,92,246,0.2)]"
             >
               <span className="font-mono text-xs text-accent-brand font-semibold">React.js</span>
             </motion.div>
@@ -117,16 +120,16 @@ export const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute bottom-16 left-6 px-2.5 py-1 rounded border border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm shadow-sm"
+              className="absolute bottom-16 left-6 px-3 py-1.5 rounded-xl border border-border-light dark:border-[#262B38] bg-surface-light/85 dark:bg-[#12141C]/90 backdrop-blur-md shadow-sm dark:shadow-[0_0_20px_rgba(16,185,129,0.2)]"
             >
-              <span className="font-mono text-xs text-emerald-500 font-semibold">Node.js</span>
+              <span className="font-mono text-xs text-emerald-400 font-semibold">Node.js</span>
             </motion.div>
 
             {/* MongoDB Label */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute top-1/2 right-4 px-2.5 py-1 rounded border border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm shadow-sm"
+              className="absolute top-1/2 right-4 px-3 py-1.5 rounded-xl border border-border-light dark:border-[#262B38] bg-surface-light/85 dark:bg-[#12141C]/90 backdrop-blur-md shadow-sm dark:shadow-[0_0_20px_rgba(161,167,176,0.15)]"
             >
               <span className="font-mono text-xs text-text-secondary-light dark:text-text-secondary-dark font-semibold">MongoDB</span>
             </motion.div>
@@ -135,9 +138,9 @@ export const Hero: React.FC = () => {
             <motion.div
               animate={{ y: [0, 4, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-              className="absolute top-6 right-24 px-2.5 py-1 rounded border border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm shadow-sm"
+              className="absolute top-6 right-24 px-3 py-1.5 rounded-xl border border-border-light dark:border-[#262B38] bg-surface-light/85 dark:bg-[#12141C]/90 backdrop-blur-md shadow-sm dark:shadow-[0_0_20px_rgba(56,189,248,0.2)]"
             >
-              <span className="font-mono text-xs text-accent-secondary font-semibold">TypeScript</span>
+              <span className="font-mono text-xs text-sky-400 font-semibold">TypeScript</span>
             </motion.div>
           </div>
         </motion.div>

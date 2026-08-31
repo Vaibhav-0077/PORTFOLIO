@@ -6,10 +6,13 @@ import { fadeInUp, staggerContainer, itemReveal } from '../utils/animations';
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-24 relative overflow-hidden theme-transition bg-elevated-light/40 dark:bg-[#0C0E12]">
+    <section id="skills" className="py-24 relative overflow-hidden theme-transition bg-elevated-light/40 dark:bg-[#090A0E]">
       {/* Grid background layer */}
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
       <div className="absolute inset-0 bg-noise opacity-[0.012] dark:opacity-[0.015] pointer-events-none" />
+
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-brand/5 dark:bg-purple-600/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -33,7 +36,7 @@ export const Skills: React.FC = () => {
         </motion.div>
 
         {/* Skill Category Grids */}
-        <div className="space-y-12">
+        <div className="space-y-14">
           {SKILL_GROUPS.map((group) => (
             <motion.div
               key={group.category}
@@ -43,12 +46,13 @@ export const Skills: React.FC = () => {
               viewport={{ once: true, margin: '-10%' }}
               className="space-y-6"
             >
-              {/* Category Title */}
-              <motion.div variants={itemReveal} className="flex items-center space-x-4">
+              {/* Category Title with Glowing Indicator Dot */}
+              <motion.div variants={itemReveal} className="flex items-center space-x-3.5">
+                <span className="w-2 h-2 rounded-full bg-accent-brand shadow-[0_0_10px_rgba(139,92,246,0.8)]" />
                 <h3 className="font-display font-bold text-lg tracking-tight text-text-primary-light dark:text-text-primary-dark">
                   {group.category}
                 </h3>
-                <div className="flex-grow h-[1px] bg-border-light dark:bg-border-dark" />
+                <div className="flex-grow h-[1px] bg-gradient-to-r from-border-light dark:from-accent-brand/40 via-border-light dark:via-border-dark to-transparent" />
               </motion.div>
 
               {/* Cards Grid */}

@@ -16,24 +16,24 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
   const renderVisualMockup = () => {
     if (project.id === 'lush-jewels') {
       return (
-        <div className="w-full h-full bg-[#13151A] relative flex flex-col justify-between p-6 select-none overflow-hidden">
+        <div className="w-full h-full bg-[#0B0C0E] relative flex flex-col justify-between p-6 select-none overflow-hidden">
           {/* Subtle grid backdrop */}
-          <div className="absolute inset-0 bg-grid opacity-10" />
+          <div className="absolute inset-0 bg-grid opacity-15" />
           
           {/* E-Commerce Shop Header Mockup */}
           <div className="flex justify-between items-center relative z-10">
-            <div className="text-[10px] font-mono text-accent-brand uppercase tracking-wider font-bold">Lush Jewels Shop</div>
+            <div className="text-[10px] font-mono text-purple-400 uppercase tracking-wider font-bold">Lush Jewels Shop</div>
             <div className="flex gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-[#E2E2DF]/20" />
-              <div className="w-2.5 h-2.5 rounded-full bg-accent-brand/40" />
+              <div className="w-2.5 h-2.5 rounded-full bg-accent-brand/50" />
             </div>
           </div>
 
           {/* Product Zoom Showcase Mockup */}
           <div className="my-auto flex items-center justify-center gap-6 relative z-10">
             <div className="relative group">
-              <div className="absolute -inset-1.5 bg-accent-brand/20 rounded-xl blur opacity-30" />
-              <div className="w-20 h-20 rounded-xl bg-[#1A1D24] border border-[#272A30] flex items-center justify-center text-accent-brand text-2xl font-bold font-display shadow-lg">
+              <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl blur opacity-40 group-hover:opacity-80 transition duration-500" />
+              <div className="w-20 h-20 rounded-xl bg-[#14161F] border border-[#262A36] flex items-center justify-center text-accent-brand text-2xl font-bold font-display shadow-[0_0_25px_rgba(139,92,246,0.25)]">
                 💎
               </div>
             </div>
@@ -49,9 +49,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           </div>
 
           {/* Checkout Status Mockup */}
-          <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary-dark/60 border-t border-[#1C1F26] pt-4 relative z-10">
+          <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary-dark/70 border-t border-[#1B1E28] pt-4 relative z-10">
             <span>Price: $1,249.00</span>
-            <span className="text-emerald-400 flex items-center gap-1">● In Stock</span>
+            <span className="text-emerald-400 flex items-center gap-1 font-semibold">● In Stock</span>
           </div>
         </div>
       );
@@ -59,11 +59,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
     if (project.id === 'amazon-clone') {
       return (
-        <div className="w-full h-full bg-[#0F1115] relative flex flex-col justify-between p-5 select-none overflow-hidden border-b border-border-dark/15">
-          <div className="absolute inset-0 bg-grid opacity-[0.04]" />
+        <div className="w-full h-full bg-[#0B0C0E] relative flex flex-col justify-between p-5 select-none overflow-hidden border-b border-[#1C202B]">
+          <div className="absolute inset-0 bg-grid opacity-[0.06]" />
           
           {/* Amazon Search Mock */}
-          <div className="bg-[#1A1D24] p-2 rounded-lg border border-[#2A2E35] flex items-center justify-between gap-3 relative z-10">
+          <div className="bg-[#151720] p-2 rounded-lg border border-[#242834] flex items-center justify-between gap-3 relative z-10">
             <div className="w-3 h-3 rounded bg-amber-500" />
             <div className="flex-grow h-2 bg-text-secondary-dark/30 rounded" />
             <div className="w-6 h-2 bg-amber-500 rounded" />
@@ -71,9 +71,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
           {/* Dynamic Carousel Slide Preview */}
           <div className="flex gap-3 justify-center items-end my-4 relative z-10">
-            <div className="w-12 h-16 bg-[#171A21] border border-border-dark/50 rounded flex items-center justify-center text-xs">📦</div>
-            <div className="w-14 h-20 bg-[#20242D] border border-accent-brand/20 rounded shadow-lg flex items-center justify-center text-lg scale-105">🛒</div>
-            <div className="w-12 h-16 bg-[#171A21] border border-border-dark/50 rounded flex items-center justify-center text-xs">📱</div>
+            <div className="w-12 h-16 bg-[#13151D] border border-[#222532] rounded flex items-center justify-center text-xs">📦</div>
+            <div className="w-14 h-20 bg-[#1C1F2B] border border-purple-500/30 rounded shadow-[0_0_15px_rgba(139,92,246,0.2)] flex items-center justify-center text-lg scale-105">🛒</div>
+            <div className="w-12 h-16 bg-[#13151D] border border-[#222532] rounded flex items-center justify-center text-xs">📱</div>
           </div>
 
           <div className="h-1 bg-amber-500/20 rounded relative z-10">
@@ -85,13 +85,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
     // Default: Hotel Management System
     return (
-      <div className="w-full h-full bg-[#111317] relative flex flex-col justify-between p-5 select-none overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-[0.05]" />
+      <div className="w-full h-full bg-[#0B0C0E] relative flex flex-col justify-between p-5 select-none overflow-hidden border-b border-[#1C202B]">
+        <div className="absolute inset-0 bg-grid opacity-[0.06]" />
         
         {/* Booking Calendar Mockup */}
         <div className="grid grid-cols-4 gap-2 relative z-10">
           {[101, 102, 103, 104].map((room, idx) => (
-            <div key={room} className="p-1 rounded bg-[#181B21] border border-border-dark/60 text-center">
+            <div key={room} className="p-1 rounded bg-[#14161F] border border-[#222634] text-center">
               <div className="text-[7px] font-mono text-text-secondary-dark/60">{room}</div>
               <div className={`w-1.5 h-1.5 rounded-full mx-auto mt-1 ${idx % 3 === 0 ? 'bg-rose-500' : 'bg-emerald-500'}`} />
             </div>
@@ -99,18 +99,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
         </div>
 
         {/* Guest ledger entry */}
-        <div className="my-auto space-y-1.5 bg-[#171A21]/70 p-2.5 rounded border border-border-dark/30 relative z-10">
+        <div className="my-auto space-y-1.5 bg-[#14161F]/80 p-2.5 rounded border border-[#222634] relative z-10">
           <div className="flex justify-between items-center text-[8px] font-mono">
             <span className="text-text-primary-dark">GUEST: JOHN D.</span>
-            <span className="text-accent-brand font-bold">103</span>
+            <span className="text-purple-400 font-bold">103</span>
           </div>
-          <div className="w-full h-1 bg-[#252830] rounded" />
-          <div className="w-4/5 h-1 bg-[#252830] rounded" />
+          <div className="w-full h-1 bg-[#222634] rounded" />
+          <div className="w-4/5 h-1 bg-[#222634] rounded" />
         </div>
 
-        <div className="flex justify-between items-center text-[7px] font-mono text-text-secondary-dark/50 relative z-10">
+        <div className="flex justify-between items-center text-[7px] font-mono text-text-secondary-dark/60 relative z-10">
           <span>SQLITE CONNECTOR</span>
-          <span>OK</span>
+          <span className="text-emerald-400">OK</span>
         </div>
       </div>
     );
@@ -121,10 +121,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
       <motion.div
         variants={itemReveal}
         onClick={() => onOpenModal(project)}
-        className="col-span-1 lg:col-span-12 group grid grid-cols-1 lg:grid-cols-12 gap-6 rounded-3xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden hover:border-accent-brand/40 dark:hover:border-accent-brand/40 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer"
+        className="col-span-1 lg:col-span-12 group grid grid-cols-1 lg:grid-cols-12 gap-6 rounded-3xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] overflow-hidden hover:border-accent-brand/40 dark:hover:border-accent-brand/60 shadow-sm hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-500 cursor-pointer"
       >
         {/* Left Side: Creative CSS Mockup */}
-        <div className="lg:col-span-5 h-[240px] lg:h-auto min-h-[220px] bg-[#16171E] border-b lg:border-b-0 lg:border-r border-border-light dark:border-border-dark relative">
+        <div className="lg:col-span-5 h-[240px] lg:h-auto min-h-[220px] bg-[#0B0C0E] border-b lg:border-b-0 lg:border-r border-border-light dark:border-[#1E222B] relative">
           {renderVisualMockup()}
         </div>
 
@@ -133,10 +133,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           <div className="space-y-4">
             {/* Category / Trigger */}
             <div className="flex justify-between items-center">
-              <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-accent-brand">
+              <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase bg-accent-brand/10 text-accent-brand dark:text-purple-300 border border-accent-brand/30">
                 Featured Case Study
               </span>
-              <div className="p-1.5 rounded-full border border-border-light dark:border-border-dark bg-elevated-light dark:bg-elevated-dark text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand group-hover:border-accent-brand transition-colors duration-300">
+              <div className="p-1.5 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand transition-colors duration-300">
                 <ArrowUpRight className="w-4 h-4" />
               </div>
             </div>
@@ -146,7 +146,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
               <h3 className="font-display font-bold text-2xl sm:text-3xl text-text-primary-light dark:text-text-primary-dark">
                 {title}
               </h3>
-              <p className="text-sm font-semibold text-accent-secondary">
+              <p className="text-sm font-semibold text-accent-secondary dark:text-sky-400">
                 {subtitle}
               </p>
               <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
@@ -159,7 +159,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
               {tech.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-1 rounded bg-elevated-light dark:bg-elevated-dark border border-border-light dark:border-border-dark text-text-secondary-light dark:text-text-secondary-dark text-[11px] font-mono"
+                  className="px-2.5 py-1 rounded bg-elevated-light dark:bg-[#161822] border border-border-light dark:border-[#242834] text-text-secondary-light dark:text-purple-200 text-[11px] font-mono"
                 >
                   {tag}
                 </span>
@@ -168,10 +168,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           </div>
 
           {/* Featured items highlight list */}
-          <div className="border-t border-border-light/60 dark:border-border-dark/60 pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="border-t border-border-light/60 dark:border-[#1E222B] pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {features.slice(0, 4).map((f) => (
-              <div key={f} className="flex items-start gap-2 text-xs text-text-secondary-light dark:text-text-secondary-dark">
-                <CheckCircle className="w-3.5 h-3.5 text-accent-brand shrink-0 mt-0.5" />
+              <div key={f} className="flex items-start gap-2 text-xs text-text-secondary-light dark:text-text-secondary-dark font-sans">
+                <CheckCircle className="w-3.5 h-3.5 text-accent-brand dark:text-purple-400 shrink-0 mt-0.5" />
                 <span className="line-clamp-1">{f}</span>
               </div>
             ))}
@@ -186,21 +186,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
     <motion.div
       variants={itemReveal}
       onClick={() => onOpenModal(project)}
-      className="col-span-1 md:col-span-6 group flex flex-col justify-between rounded-2xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden hover:border-accent-brand/40 dark:hover:border-accent-brand/40 shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer"
+      className="col-span-1 md:col-span-6 group flex flex-col justify-between rounded-2xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] overflow-hidden hover:border-accent-brand/40 dark:hover:border-accent-brand/60 shadow-sm hover:shadow-lg dark:hover:shadow-[0_0_25px_rgba(139,92,246,0.12)] transition-all duration-500 cursor-pointer"
     >
       <div className="space-y-4">
         {/* CSS Mockup Preview container */}
-        <div className="w-full h-[180px] bg-[#16171E] border-b border-border-light dark:border-border-dark">
+        <div className="w-full h-[180px] bg-[#0B0C0E] border-b border-border-light dark:border-[#1E222B]">
           {renderVisualMockup()}
         </div>
 
         {/* Content detail */}
         <div className="p-6 space-y-3">
           <div className="flex justify-between items-center">
-            <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-text-secondary-light dark:text-text-secondary-dark">
+            <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-accent-brand dark:text-purple-400">
               {category}
             </span>
-            <div className="p-1 rounded-full border border-border-light dark:border-border-dark bg-elevated-light dark:bg-elevated-dark text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand group-hover:border-accent-brand transition-colors duration-300">
+            <div className="p-1 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand transition-colors duration-300">
               <ArrowUpRight className="w-3.5 h-3.5" />
             </div>
           </div>
@@ -220,7 +220,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
         {tech.map((tag) => (
           <span
             key={tag}
-            className="px-2 py-0.5 rounded bg-elevated-light dark:bg-elevated-dark border border-border-light dark:border-border-dark text-text-secondary-light dark:text-text-secondary-dark text-[10px] font-mono"
+            className="px-2 py-0.5 rounded bg-elevated-light dark:bg-[#161822] border border-border-light dark:border-[#242834] text-text-secondary-light dark:text-purple-200 text-[10px] font-mono"
           >
             {tag}
           </span>
