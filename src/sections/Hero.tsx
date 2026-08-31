@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText } from 'lucide-react';
 import { CanvasContainer } from '../three/CanvasContainer';
-import { SOCIAL_LINKS } from '../utils/constants';
+import { PERSONAL_INFO, SOCIAL_LINKS } from '../utils/constants';
 import { staggerContainer, itemReveal } from '../utils/animations';
 
 export const Hero: React.FC = () => {
@@ -37,9 +37,10 @@ export const Hero: React.FC = () => {
           animate="visible"
           className="lg:col-span-7 flex flex-col justify-center space-y-6 text-center lg:text-left"
         >
-          {/* Eyebrow badge */}
+          {/* Eyebrow badge with Avatar */}
           <motion.div variants={itemReveal} className="flex justify-center lg:justify-start">
-            <span className="px-3.5 py-1.5 rounded-full border border-accent-brand/20 bg-accent-brand/5 text-accent-brand text-xs font-semibold tracking-widest uppercase font-mono">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent-brand/20 bg-accent-brand/5 text-accent-brand text-xs font-semibold tracking-widest uppercase font-mono shadow-sm">
+              <img src={PERSONAL_INFO.avatar} alt={PERSONAL_INFO.name} className="w-5 h-5 rounded-full object-cover border border-accent-brand/40" />
               Full-Stack Developer
             </span>
           </motion.div>

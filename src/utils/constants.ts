@@ -1,3 +1,19 @@
+export const PERSONAL_INFO = {
+  name: 'Vaibhav',
+  title: 'Full-Stack Developer / MERN Stack Specialist',
+  location: 'Mumbai, India',
+  avatar: '/profile.png',
+  status: 'Available for Work & Opportunities',
+  bio: `I am a Full-Stack MERN Developer based in Mumbai with a passion for building scalable web applications, robust REST APIs, and modern, highly responsive frontend interfaces. With a B.Sc. in Information Technology (2025), I bridge the gap between technical backend logic and clean digital experiences.`,
+  stats: [
+    { label: 'Degree', value: 'B.Sc. IT (2025)' },
+    { label: 'Specialization', value: 'MERN Stack' },
+    { label: 'Location', value: 'Mumbai, IN' },
+    { label: 'Status', value: 'Open for Roles' },
+  ],
+  interests: ['3D Web Experiences', 'Full-Stack Architecture', 'UI/UX Crafting', 'API Systems'],
+};
+
 export const SOCIAL_LINKS = {
   github: 'https://github.com',
   linkedin: 'https://linkedin.com',
