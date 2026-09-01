@@ -146,3 +146,19 @@ body.dark {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Infinite Marquee Animation */
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: scroll-marquee 45s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

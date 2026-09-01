@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Terminal, Code, Database, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../utils/constants';
+import { GithubStats } from '../components/GithubStats';
 import { fadeInUp, staggerContainer, itemReveal } from '../utils/animations';
 
 export const About: React.FC = () => {
@@ -298,6 +299,9 @@ export const About: React.FC = () => {
           </motion.div>
 
         </div>
+
+        {/* Live GitHub Metrics Integration */}
+        <GithubStats />
 
       </div>
     </section>

@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 
 // Page Sections
 import { Hero } from './sections/Hero';
+import { Marquee } from './components/Marquee';
 import { About } from './sections/About';
 import { Skills } from './sections/Skills';
 import { Projects } from './sections/Projects';
@@ -28,6 +29,9 @@ function App() {
       <main className="relative w-full z-10 overflow-hidden">
         {/* Hero Landing */}
         <Hero />
+
+        {/* Infinite Scrolling Ticker */}
+        <Marquee />
 
         {/* Philosophy Intro */}
         <About />
