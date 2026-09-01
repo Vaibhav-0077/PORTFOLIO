@@ -195,9 +195,23 @@ export interface TimelineItem {
   title: string;
   institution: string;
   desc: string;
+  special?: boolean;
 }
 
 export const TIMELINE_ITEMS: TimelineItem[] = [
+  {
+    year: '2026',
+    title: 'Taking Admission to MCA',
+    institution: 'Master of Computer Applications',
+    desc: 'Advancing my academic background by pursuing a Master of Computer Applications to deepen my knowledge in software engineering, algorithms, and system architecture.',
+  },
+  {
+    year: '2025 - 2026',
+    title: 'Full Stack Developer Internship',
+    institution: 'Crown IT Solutions',
+    desc: 'Began professional journey building real-world, full-stack applications. Collaborated with teams to implement scalable backend endpoints and responsive React frontends.',
+    special: true,
+  },
   {
     year: '2025',
     title: 'B.Sc. in Information Technology',
@@ -205,21 +219,21 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     desc: 'Rigorous studies in computational math, database schemas, object-oriented concepts, and software methodologies.',
   },
   {
-    year: '2024 - Present',
-    title: 'Freelance Full-Stack Developer',
-    institution: 'Independent Contracts',
-    desc: 'Collaborated with clients to code bespoke sites, payment endpoints, and product inventories. Focused on modernizing code bases and improving mobile performance.',
-  },
-  {
-    year: '2023 - 2024',
+    year: '2024',
     title: 'Full-Stack Developer Training & Projects',
     institution: 'Self-Directed & Coding bootcamps',
     desc: 'Mastered the MERN (MongoDB, Express, React, Node) stack. Built several full-scale replica clones and management projects to solidify API routing and database persistence.',
   },
   {
-    year: '2022',
+    year: '2023',
     title: 'Initial Entry to Programming',
     institution: 'First Steps',
     desc: 'Began writing scripts in Python and creating web layouts with vanilla HTML/CSS. Discovered a passion for bringing ideas to life through software.',
+  },
+  {
+    year: '2022',
+    title: 'Admission to B.Sc. IT',
+    institution: 'Undergraduate Studies',
+    desc: 'Took admission into the B.Sc. Information Technology program, laying the foundational academic groundwork for my career in software engineering.',
   },
 ];

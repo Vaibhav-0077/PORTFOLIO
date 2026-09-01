@@ -46,7 +46,7 @@ export const Experience: React.FC = () => {
           >
             {TIMELINE_ITEMS.map((item, idx) => {
               const isEven = idx % 2 === 0;
-              const isEducation = item.title.includes('B.Sc.') || item.institution.includes('University');
+              const isEducation = item.title.includes('B.Sc.') || item.institution.includes('University') || item.title.includes('Admission') || item.institution.includes('Master');
 
               return (
                 <motion.div
@@ -68,10 +68,17 @@ export const Experience: React.FC = () => {
                   {/* Spacer or Card Container (Left on desktop) */}
                   <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
                     <div
-                      className={`p-6 rounded-2xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hover:border-accent-brand/40 dark:hover:border-accent-brand/40 shadow-sm hover:shadow transition-all duration-300 ${
-                        isEven ? 'md:text-left' : 'md:text-right'
-                      }`}
+                      className={`relative p-6 rounded-2xl border bg-surface-light dark:bg-surface-dark transition-all duration-300 shadow-sm hover:shadow ${
+                        item.special
+                          ? 'border-accent-brand dark:border-purple-500 shadow-[0_0_15px_rgba(139,92,246,0.15)] dark:shadow-[0_0_25px_rgba(139,92,246,0.2)] hover:shadow-[0_0_25px_rgba(139,92,246,0.3)]'
+                          : 'border-border-light dark:border-border-dark hover:border-accent-brand/40 dark:hover:border-accent-brand/40'
+                      } ${isEven ? 'md:text-left' : 'md:text-right'}`}
                     >
+                      {item.special && (
+                        <div className="absolute -top-[1px] -right-[1px] px-3 py-1 bg-gradient-to-r from-accent-brand to-purple-500 text-white text-[10px] font-mono font-bold tracking-widest uppercase rounded-bl-xl rounded-tr-2xl shadow-sm">
+                          Featured
+                        </div>
+                      )}
                       {/* Year tag & icon */}
                       <div className={`flex items-center gap-2 mb-2 ${
                         isEven ? 'justify-start' : 'justify-start md:justify-end'
