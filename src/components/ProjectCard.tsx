@@ -16,42 +16,45 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
   const renderVisualMockup = () => {
     if (project.id === 'lush-jewels') {
       return (
-        <div className="w-full h-full bg-[#0B0C0E] relative flex flex-col justify-between p-6 select-none overflow-hidden">
+        <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-6 select-none overflow-hidden">
           {/* Subtle grid backdrop */}
           <div className="absolute inset-0 bg-grid opacity-15" />
           
+          {/* Subtle radial glow following the card */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-brand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
           {/* E-Commerce Shop Header Mockup */}
-          <div className="flex justify-between items-center relative z-10">
+          <div className="flex justify-between items-center relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
             <div className="text-[10px] font-mono text-purple-400 uppercase tracking-wider font-bold">Lush Jewels Shop</div>
             <div className="flex gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#E2E2DF]/20" />
-              <div className="w-2.5 h-2.5 rounded-full bg-accent-brand/50" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#E2E2DF]/10" />
+              <div className="w-2.5 h-2.5 rounded-full bg-accent-brand/40 group-hover:bg-accent-brand transition-colors duration-500" />
             </div>
           </div>
 
           {/* Product Zoom Showcase Mockup */}
           <div className="my-auto flex items-center justify-center gap-6 relative z-10">
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl blur opacity-40 group-hover:opacity-80 transition duration-500" />
-              <div className="w-20 h-20 rounded-xl bg-[#14161F] border border-[#262A36] flex items-center justify-center text-accent-brand text-2xl font-bold font-display shadow-[0_0_25px_rgba(139,92,246,0.25)]">
+            <div className="relative group/diamond">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full blur-xl opacity-20 group-hover:opacity-60 transition duration-700" />
+              <div className="w-20 h-20 rounded-2xl bg-[#101217] border border-[#262A36] flex items-center justify-center text-accent-brand text-3xl font-bold font-display shadow-[0_0_25px_rgba(139,92,246,0.15)] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500">
                 💎
               </div>
             </div>
-            <div className="space-y-1.5">
-              <div className="w-24 h-2 bg-text-primary-dark/80 rounded" />
-              <div className="w-16 h-1.5 bg-text-secondary-dark/45 rounded" />
-              <div className="flex gap-1.5 pt-1">
-                <div className="w-3 h-3 rounded-full bg-amber-400" />
-                <div className="w-3 h-3 rounded-full bg-slate-300" />
-                <div className="w-3 h-3 rounded-full bg-rose-300" />
+            <div className="space-y-2 transition-transform duration-500 group-hover:translate-x-1">
+              <div className="w-24 h-2.5 bg-text-primary-dark/90 rounded" />
+              <div className="w-16 h-1.5 bg-text-secondary-dark/50 rounded" />
+              <div className="flex gap-1.5 pt-1.5">
+                <div className="w-3.5 h-3.5 rounded-full bg-amber-400/80 shadow-[0_0_10px_rgba(251,191,36,0.3)]" />
+                <div className="w-3.5 h-3.5 rounded-full bg-slate-300/80" />
+                <div className="w-3.5 h-3.5 rounded-full bg-rose-400/80" />
               </div>
             </div>
           </div>
 
           {/* Checkout Status Mockup */}
-          <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary-dark/70 border-t border-[#1B1E28] pt-4 relative z-10">
+          <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary-dark/70 border-t border-[#1B1E28]/50 pt-4 relative z-10 transition-transform duration-500 group-hover:translate-y-1">
             <span>Price: $1,249.00</span>
-            <span className="text-emerald-400 flex items-center gap-1 font-semibold">● In Stock</span>
+            <span className="text-emerald-400 flex items-center gap-1 font-semibold group-hover:animate-pulse">● In Stock</span>
           </div>
         </div>
       );
@@ -59,58 +62,61 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
     if (project.id === 'amazon-clone') {
       return (
-        <div className="w-full h-full bg-[#0B0C0E] relative flex flex-col justify-between p-5 select-none overflow-hidden border-b border-[#1C202B]">
+        <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-5 select-none overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           
           {/* Amazon Search Mock */}
-          <div className="bg-[#151720] p-2 rounded-lg border border-[#242834] flex items-center justify-between gap-3 relative z-10">
-            <div className="w-3 h-3 rounded bg-amber-500" />
+          <div className="bg-[#12141A] p-2.5 rounded-lg border border-[#1E222D] flex items-center justify-between gap-3 relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+            <div className="w-3 h-3 rounded bg-amber-500/80" />
             <div className="flex-grow h-2 bg-text-secondary-dark/30 rounded" />
-            <div className="w-6 h-2 bg-amber-500 rounded" />
+            <div className="w-6 h-2 bg-amber-500/80 rounded" />
           </div>
 
           {/* Dynamic Carousel Slide Preview */}
-          <div className="flex gap-3 justify-center items-end my-4 relative z-10">
-            <div className="w-12 h-16 bg-[#13151D] border border-[#222532] rounded flex items-center justify-center text-xs">📦</div>
-            <div className="w-14 h-20 bg-[#1C1F2B] border border-purple-500/30 rounded shadow-[0_0_15px_rgba(139,92,246,0.2)] flex items-center justify-center text-lg scale-105">🛒</div>
-            <div className="w-12 h-16 bg-[#13151D] border border-[#222532] rounded flex items-center justify-center text-xs">📱</div>
+          <div className="flex gap-4 justify-center items-end my-4 relative z-10">
+            <div className="w-12 h-16 bg-[#101217] border border-[#1E222D] rounded-xl flex items-center justify-center text-sm transition-transform duration-500 group-hover:-translate-x-2">📦</div>
+            <div className="w-16 h-24 bg-[#161821] border border-amber-500/40 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.15)] group-hover:shadow-[0_0_35px_rgba(245,158,11,0.3)] flex items-center justify-center text-2xl scale-110 transition-all duration-500 group-hover:-translate-y-3">🛒</div>
+            <div className="w-12 h-16 bg-[#101217] border border-[#1E222D] rounded-xl flex items-center justify-center text-sm transition-transform duration-500 group-hover:translate-x-2">📱</div>
           </div>
 
-          <div className="h-1 bg-amber-500/20 rounded relative z-10">
-            <div className="w-2/3 h-full bg-amber-500 rounded" />
+          <div className="h-1 bg-amber-500/10 rounded relative z-10 overflow-hidden">
+            <div className="w-1/2 h-full bg-amber-500/80 rounded group-hover:w-[80%] transition-all duration-1000 ease-out" />
           </div>
         </div>
       );
     }
 
-    // Default: Hotel Management System
+    // Default: Hotel Management System or others
     return (
-      <div className="w-full h-full bg-[#0B0C0E] relative flex flex-col justify-between p-5 select-none overflow-hidden border-b border-[#1C202B]">
+      <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-5 select-none overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
         
         {/* Booking Calendar Mockup */}
-        <div className="grid grid-cols-4 gap-2 relative z-10">
+        <div className="grid grid-cols-4 gap-2.5 relative z-10">
           {[101, 102, 103, 104].map((room, idx) => (
-            <div key={room} className="p-1 rounded bg-[#14161F] border border-[#222634] text-center">
-              <div className="text-[7px] font-mono text-text-secondary-dark/60">{room}</div>
-              <div className={`w-1.5 h-1.5 rounded-full mx-auto mt-1 ${idx % 3 === 0 ? 'bg-rose-500' : 'bg-emerald-500'}`} />
+            <div key={room} className="p-1.5 rounded-lg bg-[#101217] border border-[#1E222D] text-center transition-transform duration-500 group-hover:scale-105" style={{ transitionDelay: `${idx * 50}ms` }}>
+              <div className="text-[7px] font-mono text-text-secondary-dark/60 mb-1">{room}</div>
+              <div className={`w-1.5 h-1.5 rounded-full mx-auto ${idx % 3 === 0 ? 'bg-rose-500/80 shadow-[0_0_8px_rgba(244,63,94,0.5)]' : 'bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.5)]'}`} />
             </div>
           ))}
         </div>
 
         {/* Guest ledger entry */}
-        <div className="my-auto space-y-1.5 bg-[#14161F]/80 p-2.5 rounded border border-[#222634] relative z-10">
-          <div className="flex justify-between items-center text-[8px] font-mono">
-            <span className="text-text-primary-dark">GUEST: JOHN D.</span>
-            <span className="text-purple-400 font-bold">103</span>
+        <div className="my-auto space-y-2 bg-[#12141A]/90 p-3 rounded-xl border border-[#1E222D] relative z-10 transition-colors duration-500 group-hover:border-emerald-500/30 group-hover:bg-[#12141A]">
+          <div className="flex justify-between items-center text-[9px] font-mono">
+            <span className="text-text-primary-dark font-bold">GUEST: JOHN D.</span>
+            <span className="text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">103</span>
           </div>
-          <div className="w-full h-1 bg-[#222634] rounded" />
-          <div className="w-4/5 h-1 bg-[#222634] rounded" />
+          <div className="w-full h-1 bg-[#222634] rounded overflow-hidden">
+            <div className="w-full h-full bg-emerald-500/40 rounded group-hover:animate-pulse" />
+          </div>
         </div>
 
-        <div className="flex justify-between items-center text-[7px] font-mono text-text-secondary-dark/60 relative z-10">
+        <div className="flex justify-between items-center text-[8px] font-mono text-text-secondary-dark/60 relative z-10">
           <span>SQLITE CONNECTOR</span>
-          <span className="text-emerald-400">OK</span>
+          <span className="text-emerald-400 flex items-center gap-1"><div className="w-1 h-1 bg-emerald-400 rounded-full animate-ping" /> OK</span>
         </div>
       </div>
     );
@@ -121,60 +127,69 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
       <motion.div
         variants={itemReveal}
         onClick={() => onOpenModal(project)}
-        className="col-span-1 lg:col-span-12 group grid grid-cols-1 lg:grid-cols-12 gap-6 rounded-3xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] overflow-hidden hover:border-accent-brand/40 dark:hover:border-accent-brand/60 shadow-sm hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-500 cursor-pointer"
+        className="col-span-1 lg:col-span-12 group cursor-pointer"
       >
-        {/* Left Side: Creative CSS Mockup */}
-        <div className="lg:col-span-5 h-[240px] lg:h-auto min-h-[220px] bg-[#0B0C0E] border-b lg:border-b-0 lg:border-r border-border-light dark:border-[#1E222B] relative">
-          {renderVisualMockup()}
-        </div>
+        {/* Awwwards Tier Glow Wrapper */}
+        <div className="p-[1px] rounded-[24px] bg-gradient-to-br from-border-light to-transparent dark:from-[#2A2E3D] dark:to-transparent group-hover:from-accent-brand/50 dark:group-hover:from-purple-500/50 transition-all duration-700 shadow-sm group-hover:shadow-2xl dark:group-hover:shadow-[0_0_40px_rgba(139,92,246,0.15)] h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[23px] bg-surface-light dark:bg-[#0D0E12] overflow-hidden h-full">
+            
+            {/* Left Side: Creative CSS Mockup */}
+            <div className="lg:col-span-5 h-[260px] lg:h-auto min-h-[240px] bg-[#090A0C] border-b lg:border-b-0 lg:border-r border-border-light/30 dark:border-[#1E222B]/50 relative overflow-hidden">
+              {renderVisualMockup()}
+            </div>
 
-        {/* Right Side: Showcase Metadata */}
-        <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
-          <div className="space-y-4">
-            {/* Category / Trigger */}
-            <div className="flex justify-between items-center">
-              <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase bg-accent-brand/10 text-accent-brand dark:text-purple-300 border border-accent-brand/30">
-                Featured Case Study
-              </span>
-              <div className="p-1.5 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand transition-colors duration-300">
-                <ArrowUpRight className="w-4 h-4" />
+            {/* Right Side: Showcase Metadata */}
+            <div className="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-between space-y-8 relative">
+              {/* Subtle background noise overlay for glassmorphism depth */}
+              <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
+              
+              <div className="space-y-5 relative z-10">
+                {/* Category / Trigger */}
+                <div className="flex justify-between items-center">
+                  <span className="px-3.5 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase bg-gradient-to-r from-accent-brand to-purple-500 text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+                    Featured Case Study
+                  </span>
+                  <div className="p-2 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand/50 transition-all duration-500 group-hover:scale-110">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+
+                {/* Title / Description */}
+                <div className="space-y-3">
+                  <h3 className="font-display font-bold text-3xl sm:text-4xl text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-brand transition-colors duration-300">
+                    {title}
+                  </h3>
+                  <p className="text-sm font-semibold text-accent-secondary dark:text-sky-400 uppercase tracking-wide">
+                    {subtitle}
+                  </p>
+                  <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark/80 leading-relaxed max-w-2xl">
+                    {description}
+                  </p>
+                </div>
+
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {tech.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1.5 rounded bg-elevated-light dark:bg-[#151720] border border-border-light dark:border-[#1E222D] text-text-primary-light dark:text-purple-200 text-[11px] font-mono shadow-sm group-hover:border-purple-500/30 transition-colors duration-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Featured items highlight list */}
+              <div className="border-t border-border-light/60 dark:border-[#1E222B]/60 pt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 relative z-10">
+                {features.slice(0, 4).map((f) => (
+                  <div key={f} className="flex items-start gap-2.5 text-xs text-text-secondary-light dark:text-text-secondary-dark font-sans group/feature">
+                    <CheckCircle className="w-4 h-4 text-accent-brand dark:text-purple-400 shrink-0 group-hover/feature:text-purple-300 transition-colors" />
+                    <span className="line-clamp-1 group-hover/feature:text-text-primary-dark transition-colors">{f}</span>
+                  </div>
+                ))}
               </div>
             </div>
-
-            {/* Title / Description */}
-            <div className="space-y-2">
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-text-primary-light dark:text-text-primary-dark">
-                {title}
-              </h3>
-              <p className="text-sm font-semibold text-accent-secondary dark:text-sky-400">
-                {subtitle}
-              </p>
-              <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
-                {description}
-              </p>
-            </div>
-
-            {/* Tech Tags */}
-            <div className="flex flex-wrap gap-2 pt-1">
-              {tech.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 rounded bg-elevated-light dark:bg-[#161822] border border-border-light dark:border-[#242834] text-text-secondary-light dark:text-purple-200 text-[11px] font-mono"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Featured items highlight list */}
-          <div className="border-t border-border-light/60 dark:border-[#1E222B] pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {features.slice(0, 4).map((f) => (
-              <div key={f} className="flex items-start gap-2 text-xs text-text-secondary-light dark:text-text-secondary-dark font-sans">
-                <CheckCircle className="w-3.5 h-3.5 text-accent-brand dark:text-purple-400 shrink-0 mt-0.5" />
-                <span className="line-clamp-1">{f}</span>
-              </div>
-            ))}
           </div>
         </div>
       </motion.div>
@@ -186,45 +201,57 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
     <motion.div
       variants={itemReveal}
       onClick={() => onOpenModal(project)}
-      className="col-span-1 md:col-span-6 group flex flex-col justify-between rounded-2xl border border-border-light dark:border-[#1E222B] bg-surface-light dark:bg-[#101217] overflow-hidden hover:border-accent-brand/40 dark:hover:border-accent-brand/60 shadow-sm hover:shadow-lg dark:hover:shadow-[0_0_25px_rgba(139,92,246,0.12)] transition-all duration-500 cursor-pointer"
+      className="col-span-1 md:col-span-6 group cursor-pointer"
     >
-      <div className="space-y-4">
-        {/* CSS Mockup Preview container */}
-        <div className="w-full h-[180px] bg-[#0B0C0E] border-b border-border-light dark:border-[#1E222B]">
-          {renderVisualMockup()}
-        </div>
+      {/* Awwwards Tier Glow Wrapper */}
+      <div className="p-[1px] rounded-[24px] bg-gradient-to-br from-border-light to-transparent dark:from-[#2A2E3D] dark:to-transparent group-hover:from-accent-brand/40 dark:group-hover:from-purple-500/40 transition-all duration-700 shadow-sm group-hover:shadow-xl dark:group-hover:shadow-[0_0_30px_rgba(139,92,246,0.12)] h-full flex flex-col justify-between">
+        <div className="rounded-[23px] bg-surface-light dark:bg-[#0D0E12] overflow-hidden h-full flex flex-col relative">
+          
+          {/* Subtle noise overlay */}
+          <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none z-0" />
 
-        {/* Content detail */}
-        <div className="p-6 space-y-3">
-          <div className="flex justify-between items-center">
-            <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-accent-brand dark:text-purple-400">
-              {category}
-            </span>
-            <div className="p-1 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand transition-colors duration-300">
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </div>
+          {/* CSS Mockup Preview container */}
+          <div className="w-full h-[200px] bg-[#090A0C] border-b border-border-light/30 dark:border-[#1E222B]/50 relative z-10">
+            {renderVisualMockup()}
           </div>
 
-          <h3 className="font-display font-bold text-xl text-text-primary-light dark:text-text-primary-dark">
-            {title}
-          </h3>
-          
-          <p className="text-xs sm:text-sm text-text-secondary-light dark:text-text-secondary-dark line-clamp-3 leading-relaxed">
-            {description}
-          </p>
-        </div>
-      </div>
+          {/* Content detail */}
+          <div className="p-7 space-y-4 flex-grow relative z-10">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-accent-brand dark:text-purple-400">
+                {category}
+              </span>
+              <div className="p-1.5 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand/50 transition-all duration-500 group-hover:scale-110">
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
 
-      {/* Footer Tags */}
-      <div className="px-6 pb-6 pt-1 flex flex-wrap gap-1.5">
-        {tech.map((tag) => (
-          <span
-            key={tag}
-            className="px-2 py-0.5 rounded bg-elevated-light dark:bg-[#161822] border border-border-light dark:border-[#242834] text-text-secondary-light dark:text-purple-200 text-[10px] font-mono"
-          >
-            {tag}
-          </span>
-        ))}
+            <h3 className="font-display font-bold text-2xl text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-brand transition-colors duration-300">
+              {title}
+            </h3>
+            
+            <p className="text-xs sm:text-sm text-text-secondary-light dark:text-text-secondary-dark/80 line-clamp-3 leading-relaxed">
+              {description}
+            </p>
+          </div>
+
+          {/* Footer Tags */}
+          <div className="px-7 pb-7 pt-2 flex flex-wrap gap-2 relative z-10">
+            {tech.slice(0, 4).map((tag) => (
+              <span
+                key={tag}
+                className="px-2.5 py-1 rounded bg-elevated-light dark:bg-[#151720] border border-border-light dark:border-[#1E222D] text-text-primary-light dark:text-purple-200 text-[10px] font-mono shadow-sm"
+              >
+                {tag}
+              </span>
+            ))}
+            {tech.length > 4 && (
+              <span className="px-2.5 py-1 rounded bg-elevated-light dark:bg-transparent border border-transparent text-text-secondary-dark text-[10px] font-mono">
+                +{tech.length - 4}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
     </motion.div>
   );

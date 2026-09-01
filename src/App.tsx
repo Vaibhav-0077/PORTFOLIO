@@ -11,6 +11,7 @@ import { Skills } from './sections/Skills';
 import { Projects } from './sections/Projects';
 import { Services } from './sections/Services';
 import { Experience } from './sections/Experience';
+import { Credentials } from './sections/Credentials';
 import { Contact } from './sections/Contact';
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
 
         {/* Journey Timeline */}
         <Experience />
+
+        {/* Certificates & Letters */}
+        <Credentials />
 
         {/* Contact Form Details */}
         <Contact />

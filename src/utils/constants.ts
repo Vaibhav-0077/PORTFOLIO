@@ -15,8 +15,8 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  github: 'https://github.com',
-  linkedin: 'https://linkedin.com',
+  github: 'https://github.com/Vaibhav-0077',
+  linkedin: 'https://www.linkedin.com/in/vaibhav-guigade-07v',
   email: 'vaibhav@example.com',
   resume: '/resume.pdf',
 };
@@ -236,4 +236,48 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     institution: 'Undergraduate Studies',
     desc: 'Took admission into the B.Sc. Information Technology program, laying the foundational academic groundwork for my career in software engineering.',
   },
+];
+
+export interface CredentialItem {
+  id: string;
+  type: string;
+  title: string;
+  issuer: string;
+  date: string;
+  link?: string;
+}
+
+export const CREDENTIALS: CredentialItem[] = [
+  {
+    id: 'crown-it',
+    type: 'Internship Letter',
+    title: 'Full-Stack Developer Internship',
+    issuer: 'Crown IT Solutions',
+    date: '2025 - 2026',
+    link: '#',
+  },
+  {
+    id: 'degree',
+    type: 'Academic Degree',
+    title: 'B.Sc. Information Technology',
+    issuer: 'Mumbai University',
+    date: 'Class of 2025',
+    link: '#',
+  },
+  {
+    id: 'web-dev',
+    type: 'Certification',
+    title: 'Advanced Web Development Bootcamp',
+    issuer: 'Online Platform / Institute',
+    date: '2023',
+    link: '#',
+  },
+  {
+    id: 'react-cert',
+    type: 'Certification',
+    title: 'React & Frontend Architecture',
+    issuer: 'Tech Academy',
+    date: '2024',
+    link: '#',
+  }
 ];
