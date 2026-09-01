@@ -17,7 +17,7 @@ export const PERSONAL_INFO = {
 export const SOCIAL_LINKS = {
   github: 'https://github.com/Vaibhav-0077',
   linkedin: 'https://www.linkedin.com/in/vaibhav-guigade-07v',
-  email: 'vaibhav@example.com',
+  email: import.meta.env.VITE_PUBLIC_EMAIL || 'vaibhav@example.com',
   resume: '/resume.pdf',
 };
 

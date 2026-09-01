@@ -58,12 +58,43 @@ export const Contact: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate endpoint request sending delay (MERN Backend / EmailJS integration point)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setForm({ name: '', email: '', message: '' }); // reset
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+      
+      if (!accessKey) {
+        console.error("Web3Forms API key is missing. Please add VITE_WEB3FORMS_KEY to your .env file.");
+        setSubmitStatus('error');
+        setIsSubmitting(false);
+        return;
+      }
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: 'New Contact Form Submission from Portfolio',
+          from_name: 'Portfolio Contact Form'
+        })
+      });
+
+      const json = await response.json();
+
+      if (response.status === 200) {
+        setSubmitStatus('success');
+        setForm({ name: '', email: '', message: '' }); // reset
+      } else {
+        console.error("Web3Forms Error:", json);
+        setSubmitStatus('error');
+      }
     } catch (err) {
+      console.error("Network Error:", err);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
