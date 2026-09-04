@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { PROJECTS } from '../utils/constants';
 import { ProjectCard } from '../components/ProjectCard';
 import { SectionHeader } from '../components/SectionHeader';
-import { staggerContainer } from '../utils/animations';
 import { Layers } from 'lucide-react';
 
 const CATEGORIES = ['All', 'Full-Stack E-Commerce', 'React & API Architecture', 'Desktop Software Architecture', 'Frontend Engineering'];
@@ -76,23 +75,14 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Project Grid */}
-        <motion.div
-          layout
-          variants={staggerContainer(0.15, 0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-5%' }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          {filteredProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

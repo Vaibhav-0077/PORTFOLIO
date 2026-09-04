@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, CheckCircle, ExternalLink, ShieldCheck, Terminal, Database, Globe, ShoppingCart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Project } from '../utils/constants';
-import { itemReveal } from '../utils/animations';
 
 interface ProjectCardProps {
   project: Project;
@@ -231,7 +230,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     return (
       <motion.div
         layout
-        variants={itemReveal}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
         onClick={handleCardClick}
         className="col-span-1 md:col-span-12 lg:col-span-12 group cursor-pointer"
       >
@@ -321,7 +323,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <motion.div
       layout
-      variants={itemReveal}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
       onClick={handleCardClick}
       className="col-span-1 md:col-span-6 lg:col-span-4 group cursor-pointer"
     >
