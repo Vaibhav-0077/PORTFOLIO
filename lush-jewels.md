@@ -1,5 +1,8 @@
 # Lush Jewels – Full-Stack Jewellery E-Commerce Website
 
+#LIVE DEMO LINK :- https://lush-jewels.onrender.com/
+
+
 ## Project Overview
 
 **Lush Jewels** is a full-stack jewellery e-commerce website that I developed to provide customers with a complete online shopping experience. Users can browse jewellery products, view detailed product information, add products to their cart, purchase individual products using the **Buy Now** functionality, complete the checkout process, and view their previous orders from their account.

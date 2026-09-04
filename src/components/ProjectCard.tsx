@@ -1,31 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import type { Project } from '../utils/constants';
 import { itemReveal } from '../utils/animations';
 
 interface ProjectCardProps {
   project: Project;
-  onOpenModal: (project: Project) => void;
+  onOpenModal?: (project: Project) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }) => {
-  const { title, category, subtitle, tech, features, featured, description } = project;
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const navigate = useNavigate();
+  const { id, title, category, subtitle, tech, features, featured, description, liveUrl } = project;
 
-  // Render a creative, CSS-only mockup visual based on the project type
+  // Render a creative, CSS-only mockup visual tailored to each project
   const renderVisualMockup = () => {
-    if (project.id === 'lush-jewels') {
+    if (id === 'lush-jewels') {
       return (
         <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-6 select-none overflow-hidden">
-          {/* Subtle grid backdrop */}
           <div className="absolute inset-0 bg-grid opacity-15" />
-          
-          {/* Subtle radial glow following the card */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-brand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
           {/* E-Commerce Shop Header Mockup */}
           <div className="flex justify-between items-center relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
-            <div className="text-[10px] font-mono text-purple-400 uppercase tracking-wider font-bold">Lush Jewels Shop</div>
+            <div className="text-[10px] font-mono text-purple-400 uppercase tracking-wider font-bold">Lush Jewels Luxury</div>
             <div className="flex gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-[#E2E2DF]/10" />
               <div className="w-2.5 h-2.5 rounded-full bg-accent-brand/40 group-hover:bg-accent-brand transition-colors duration-500" />
@@ -54,13 +53,61 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           {/* Checkout Status Mockup */}
           <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary-dark/70 border-t border-[#1B1E28]/50 pt-4 relative z-10 transition-transform duration-500 group-hover:translate-y-1">
             <span>Price: $1,249.00</span>
-            <span className="text-emerald-400 flex items-center gap-1 font-semibold group-hover:animate-pulse">● In Stock</span>
+            <span className="text-emerald-400 flex items-center gap-1 font-semibold group-hover:animate-pulse">● Buy Now Active</span>
           </div>
         </div>
       );
     }
 
-    if (project.id === 'amazon-clone') {
+    if (id === 'country-explorer') {
+      return (
+        <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-5 select-none overflow-hidden">
+          <div className="absolute inset-0 bg-grid opacity-[0.08]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+          {/* Search Header Mockup */}
+          <div className="bg-[#12141C] p-2 rounded-lg border border-[#1E2433] flex items-center justify-between gap-3 relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+            <div className="flex items-center gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-sky-400" />
+              <span className="text-[9px] font-mono text-sky-300 font-semibold">Search: "IND"</span>
+            </div>
+            <div className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-sky-500/15 text-sky-400">React Query</div>
+          </div>
+
+          {/* Dynamic Geographic Cards Preview */}
+          <div className="grid grid-cols-2 gap-3 my-auto relative z-10">
+            <div className="p-2.5 rounded-xl bg-[#10131B] border border-sky-500/30 group-hover:border-sky-400/60 shadow-[0_0_15px_rgba(56,189,248,0.15)] transition-all">
+              <div className="flex items-center justify-between text-[8px] font-mono mb-1 text-sky-300 font-bold">
+                <span>🇮🇳 INDIA</span>
+                <span className="text-emerald-400">IN</span>
+              </div>
+              <div className="text-[7px] font-mono text-text-secondary-dark/70 space-y-0.5">
+                <div>Cap: New Delhi</div>
+                <div>Pop: 1.4B</div>
+              </div>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-[#10131B] border border-[#1E2433] transition-all">
+              <div className="flex items-center justify-between text-[8px] font-mono mb-1 text-text-primary-dark font-bold">
+                <span>🇯🇵 JAPAN</span>
+                <span className="text-text-secondary-dark">JP</span>
+              </div>
+              <div className="text-[7px] font-mono text-text-secondary-dark/70 space-y-0.5">
+                <div>Cap: Tokyo</div>
+                <div>Pop: 125M</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center text-[8px] font-mono text-text-secondary-dark/60 border-t border-[#1B1E28]/50 pt-3 relative z-10">
+            <span className="text-sky-400">API: REST + CountriesNow</span>
+            <span className="text-emerald-400">● Cached</span>
+          </div>
+        </div>
+      );
+    }
+
+    if (id === 'amazon-replica') {
       return (
         <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-5 select-none overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.06]" />
@@ -75,7 +122,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
           {/* Dynamic Carousel Slide Preview */}
           <div className="flex gap-4 justify-center items-end my-4 relative z-10">
-            <div className="w-12 h-16 bg-[#101217] border border-[#1E222D] rounded-xl flex items-center justify-center text-sm transition-transform duration-500 group-hover:-translate-x-2">📦</div>
+            <div className="w-12 h-16 bg-[#101217] border border-[#1E222D] rounded-xl flex items-center justify-center text-sm transition-transform duration-500 group-hover:-translate-x-2">🎮</div>
             <div className="w-16 h-24 bg-[#161821] border border-amber-500/40 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.15)] group-hover:shadow-[0_0_35px_rgba(245,158,11,0.3)] flex items-center justify-center text-2xl scale-110 transition-all duration-500 group-hover:-translate-y-3">🛒</div>
             <div className="w-12 h-16 bg-[#101217] border border-[#1E222D] rounded-xl flex items-center justify-center text-sm transition-transform duration-500 group-hover:translate-x-2">📱</div>
           </div>
@@ -87,7 +134,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
       );
     }
 
-    // Default: Hotel Management System or others
+    // Default: Hotel Management System
     return (
       <div className="w-full h-full bg-[#090A0C] relative flex flex-col justify-between p-5 select-none overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.06]" />
@@ -122,11 +169,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
     );
   };
 
+  const handleCardClick = () => {
+    navigate(`/project/${id}`);
+  };
+
   if (featured) {
     return (
       <motion.div
         variants={itemReveal}
-        onClick={() => onOpenModal(project)}
+        onClick={handleCardClick}
         className="col-span-1 lg:col-span-12 group cursor-pointer"
       >
         {/* Awwwards Tier Glow Wrapper */}
@@ -140,7 +191,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
 
             {/* Right Side: Showcase Metadata */}
             <div className="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-between space-y-8 relative">
-              {/* Subtle background noise overlay for glassmorphism depth */}
               <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
               
               <div className="space-y-5 relative z-10">
@@ -149,8 +199,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
                   <span className="px-3.5 py-1.5 rounded-full text-[10px] font-mono font-bold tracking-widest uppercase bg-gradient-to-r from-accent-brand to-purple-500 text-white shadow-[0_0_15px_rgba(139,92,246,0.3)]">
                     Featured Case Study
                   </span>
-                  <div className="p-2 rounded-full border border-border-light dark:border-[#222634] bg-elevated-light dark:bg-[#161822] text-text-secondary-light dark:text-text-secondary-dark group-hover:text-accent-brand dark:group-hover:text-purple-300 group-hover:border-accent-brand/50 transition-all duration-500 group-hover:scale-110">
-                    <ArrowUpRight className="w-4 h-4" />
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-semibold text-accent-brand dark:text-purple-300 group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                      Read Case Study <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
                   </div>
                 </div>
 
@@ -200,14 +252,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
   return (
     <motion.div
       variants={itemReveal}
-      onClick={() => onOpenModal(project)}
-      className="col-span-1 md:col-span-6 group cursor-pointer"
+      onClick={handleCardClick}
+      className="col-span-1 md:col-span-6 lg:col-span-4 group cursor-pointer"
     >
       {/* Awwwards Tier Glow Wrapper */}
       <div className="p-[1px] rounded-[24px] bg-gradient-to-br from-border-light to-transparent dark:from-[#2A2E3D] dark:to-transparent group-hover:from-accent-brand/40 dark:group-hover:from-purple-500/40 transition-all duration-700 shadow-sm group-hover:shadow-xl dark:group-hover:shadow-[0_0_30px_rgba(139,92,246,0.12)] h-full flex flex-col justify-between">
         <div className="rounded-[23px] bg-surface-light dark:bg-[#0D0E12] overflow-hidden h-full flex flex-col relative">
           
-          {/* Subtle noise overlay */}
           <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none z-0" />
 
           {/* CSS Mockup Preview container */}
@@ -235,21 +286,34 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             </p>
           </div>
 
-          {/* Footer Tags */}
-          <div className="px-7 pb-7 pt-2 flex flex-wrap gap-2 relative z-10">
-            {tech.slice(0, 4).map((tag) => (
-              <span
-                key={tag}
-                className="px-2.5 py-1 rounded bg-elevated-light dark:bg-[#151720] border border-border-light dark:border-[#1E222D] text-text-primary-light dark:text-purple-200 text-[10px] font-mono shadow-sm"
-              >
-                {tag}
+          {/* Footer Tags & CTA */}
+          <div className="px-7 pb-6 pt-2 space-y-4 relative z-10">
+            <div className="flex flex-wrap gap-1.5">
+              {tech.slice(0, 3).map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2.5 py-1 rounded bg-elevated-light dark:bg-[#151720] border border-border-light dark:border-[#1E222D] text-text-primary-light dark:text-purple-200 text-[10px] font-mono shadow-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+              {tech.length > 3 && (
+                <span className="px-2 py-1 rounded text-text-secondary-light dark:text-text-secondary-dark/70 text-[10px] font-mono">
+                  +{tech.length - 3}
+                </span>
+              )}
+            </div>
+
+            <div className="pt-2 border-t border-border-light/60 dark:border-[#1E222D] flex items-center justify-between text-xs font-mono">
+              <span className="text-accent-brand dark:text-purple-300 font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Read Full Case Study →
               </span>
-            ))}
-            {tech.length > 4 && (
-              <span className="px-2.5 py-1 rounded bg-elevated-light dark:bg-transparent border border-transparent text-text-secondary-dark text-[10px] font-mono">
-                +{tech.length - 4}
-              </span>
-            )}
+              {liveUrl && (
+                <span className="text-emerald-500 text-[10px] flex items-center gap-1">
+                  ● Live Demo
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>

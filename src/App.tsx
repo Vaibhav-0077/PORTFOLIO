@@ -1,9 +1,11 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
-// Page Sections
+// Page Sections for Main Portfolio Landing
 import { Hero } from './sections/Hero';
 import { Marquee } from './components/Marquee';
 import { About } from './sections/About';
@@ -15,15 +17,12 @@ import { Experience } from './sections/Experience';
 import { Credentials } from './sections/Credentials';
 import { Contact } from './sections/Contact';
 
-function App() {
-  return (
-    <ThemeProvider>
-      {/* Absolute Noise Overlay globally on top */}
-      <div className="fixed inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none z-30" />
-      
-      {/* Custom Follower Cursor */}
-      <CustomCursor />
+// Dedicated Project Detail Page
+import { ProjectDetail } from './pages/ProjectDetail';
 
+function MainPage() {
+  return (
+    <>
       {/* Sticky Header Nav */}
       <Navbar />
 
@@ -62,6 +61,30 @@ function App() {
 
       {/* Footer Details */}
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        {/* Reset Scroll position on route navigation */}
+        <ScrollToTop />
+
+        {/* Absolute Noise Overlay globally on top */}
+        <div className="fixed inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none z-30" />
+        
+        {/* Custom Follower Cursor */}
+        <CustomCursor />
+
+        {/* Application Routes */}
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
+          <Route path="*" element={<MainPage />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
