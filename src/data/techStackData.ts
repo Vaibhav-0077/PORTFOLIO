@@ -1,5 +1,4 @@
 export type TechCategory = 'frontend' | 'backend' | 'database' | 'tools';
-export type TechTier = 1 | 2 | 3; // 1 = Core, 2 = Supporting, 3 = Tools
 
 export interface ProjectReference {
   name: string;
@@ -10,311 +9,308 @@ export interface ProjectReference {
 export interface TechItem {
   id: string;
   name: string;
+  subLabel: string;
   category: TechCategory;
   categoryLabel: string;
-  tier: TechTier;
-  shortDesc: string;
-  usedIn: ProjectReference[];
-  relatedIds: string[];
-  iconKey: string;
-  accentColor?: string;
-  // Position in the desktop interactive visual canvas (normalized percentages)
-  coords: { x: number; y: number };
+  categoryNumber: string;
+  description: string;
+  useCases: string[];
+  project: {
+    name: string;
+    type: string;
+    projectId?: string;
+  };
+  accentColor: string;
+  // Angular coordinates for orbital placement: angle in degrees (0 = top / 12 o'clock), radius percentage
+  angleDeg: number;
+  radiusPercent: number;
 }
 
 export const CATEGORY_FILTERS = [
-  { id: 'all', label: 'ALL' },
-  { id: 'frontend', label: 'FRONTEND' },
-  { id: 'backend', label: 'BACKEND' },
-  { id: 'database', label: 'DATABASE' },
-  { id: 'tools', label: 'TOOLS' },
+  { id: 'frontend', number: '01', label: 'FRONTEND' },
+  { id: 'backend', number: '02', label: 'BACKEND' },
+  { id: 'database', number: '03', label: 'DATABASE' },
+  { id: 'tools', number: '04', label: 'TOOLS & CLOUD' },
 ] as const;
 
 export const TECH_ITEMS: TechItem[] = [
-  // -------------------------------------------------------------
-  // TIER 1: CORE TECHNOLOGIES (Primary Visual Prominence)
-  // -------------------------------------------------------------
   {
     id: 'react',
     name: 'React',
+    subLabel: 'UI Library',
     category: 'frontend',
-    categoryLabel: 'Frontend',
-    tier: 1,
-    shortDesc: 'Component-driven interfaces & UI architecture',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Storefront UI' },
-      { name: 'Portfolio', projectId: 'portfolio', role: 'Interactive Site' },
+    categoryLabel: 'FRONTEND',
+    categoryNumber: '01',
+    description: 'Component-based library for building interactive user interfaces with a declarative and efficient approach.',
+    useCases: [
+      'Component Architecture',
+      'State Management',
+      'Performance Optimization',
+      'Reusable UI Systems',
     ],
-    relatedIds: ['typescript', 'javascript', 'tailwind', 'vite', 'nodejs'],
-    iconKey: 'react',
+    project: {
+      name: 'Lush Jewels',
+      type: 'E-commerce Platform',
+      projectId: 'lush-jewels',
+    },
     accentColor: '#38BDF8',
-    coords: { x: 30, y: 26 },
+    angleDeg: 0, // 12 o'clock
+    radiusPercent: 37,
   },
   {
     id: 'javascript',
     name: 'JavaScript',
+    subLabel: 'ES6+ Features',
     category: 'frontend',
-    categoryLabel: 'Language',
-    tier: 1,
-    shortDesc: 'Async logic, DOM operations & ES6+ standards',
-    usedIn: [
-      { name: 'Amazon Replica', projectId: 'amazon-clone', role: 'Vanilla JS' },
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Full-Stack' },
+    categoryLabel: 'FRONTEND',
+    categoryNumber: '01',
+    description: 'Core web scripting language driving dynamic client-side logic, asynchronous event loops, and web standards.',
+    useCases: [
+      'Modern ES6+ Syntax',
+      'Async Workflows & Promises',
+      'DOM Event Pipelines',
+      'Functional Programming',
     ],
-    relatedIds: ['react', 'typescript', 'nodejs', 'htmlcss'],
-    iconKey: 'javascript',
-    accentColor: '#FBBF24',
-    coords: { x: 18, y: 46 },
+    project: {
+      name: 'Amazon Replica',
+      type: 'E-commerce UI & Cart',
+      projectId: 'amazon-clone',
+    },
+    accentColor: '#F7DF1E',
+    angleDeg: 36, // ~1:15
+    radiusPercent: 37,
   },
   {
     id: 'nodejs',
     name: 'Node.js',
+    subLabel: 'Runtime Environment',
     category: 'backend',
-    categoryLabel: 'Backend',
-    tier: 1,
-    shortDesc: 'Event-driven server runtime & API services',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Backend Engine' },
+    categoryLabel: 'BACKEND',
+    categoryNumber: '02',
+    description: 'High-performance V8 JavaScript runtime built for scalable server architecture, event loops, and non-blocking I/O.',
+    useCases: [
+      'Event-Driven Architecture',
+      'RESTful API Microservices',
+      'Non-Blocking File & Network I/O',
+      'Authentication Middleware',
     ],
-    relatedIds: ['express', 'mongodb', 'restapi', 'react', 'cloudinary'],
-    iconKey: 'nodejs',
-    accentColor: '#4ADE80',
-    coords: { x: 70, y: 26 },
-  },
-  {
-    id: 'mongodb',
-    name: 'MongoDB',
-    category: 'database',
-    categoryLabel: 'Database',
-    tier: 1,
-    shortDesc: 'Document-oriented data storage & Mongoose aggregation',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Data Layer' },
-    ],
-    relatedIds: ['nodejs', 'express', 'prisma', 'restapi'],
-    iconKey: 'mongodb',
-    accentColor: '#22C55E',
-    coords: { x: 50, y: 74 },
-  },
-
-  // -------------------------------------------------------------
-  // TIER 2: SUPPORTING TECHNOLOGIES
-  // -------------------------------------------------------------
-  {
-    id: 'typescript',
-    name: 'TypeScript',
-    category: 'frontend',
-    categoryLabel: 'Frontend',
-    tier: 2,
-    shortDesc: 'End-to-end type safety & interface contracts',
-    usedIn: [
-      { name: 'Portfolio', projectId: 'portfolio', role: 'TypeScript' },
-    ],
-    relatedIds: ['react', 'javascript', 'nodejs', 'vite'],
-    iconKey: 'typescript',
-    accentColor: '#60A5FA',
-    coords: { x: 18, y: 22 },
+    project: {
+      name: 'Lush Jewels',
+      type: 'Backend Server Engine',
+      projectId: 'lush-jewels',
+    },
+    accentColor: '#5FA04E',
+    angleDeg: 72, // ~2:30 - 3:00
+    radiusPercent: 37,
   },
   {
     id: 'express',
-    name: 'Express',
+    name: 'Express.js',
+    subLabel: 'Web Framework',
     category: 'backend',
-    categoryLabel: 'Backend',
-    tier: 2,
-    shortDesc: 'REST routing, middleware & controller pipelines',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'REST Controllers' },
+    categoryLabel: 'BACKEND',
+    categoryNumber: '02',
+    description: 'Minimal and robust server framework powering routing controllers, request validation, and API middlewares.',
+    useCases: [
+      'REST Routing Controllers',
+      'Middleware Pipelines',
+      'CORS & Security Configuration',
+      'Standardized Error Handlers',
     ],
-    relatedIds: ['nodejs', 'restapi', 'mongodb', 'cloudinary'],
-    iconKey: 'express',
-    accentColor: '#94A3B8',
-    coords: { x: 82, y: 46 },
-  },
-  {
-    id: 'tailwind',
-    name: 'Tailwind CSS',
-    category: 'frontend',
-    categoryLabel: 'Frontend',
-    tier: 2,
-    shortDesc: 'Responsive utility styling & design tokens',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Styling' },
-      { name: 'Portfolio', projectId: 'portfolio', role: 'Design Tokens' },
-    ],
-    relatedIds: ['react', 'htmlcss', 'vite'],
-    iconKey: 'tailwind',
-    accentColor: '#38BDF8',
-    coords: { x: 34, y: 48 },
-  },
-  {
-    id: 'restapi',
-    name: 'REST APIs',
-    category: 'backend',
-    categoryLabel: 'Backend',
-    tier: 2,
-    shortDesc: 'HTTP resource contracts & JSON endpoints',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'API Contracts' },
-    ],
-    relatedIds: ['nodejs', 'express', 'mongodb', 'react'],
-    iconKey: 'restapi',
-    accentColor: '#A78BFA',
-    coords: { x: 66, y: 48 },
-  },
-  {
-    id: 'postgresql',
-    name: 'SQL & PostgreSQL',
-    category: 'database',
-    categoryLabel: 'Database',
-    tier: 2,
-    shortDesc: 'Relational data modeling, transactions & queries',
-    usedIn: [
-      { name: 'Hotel MS', projectId: 'hotel-ms', role: 'Relational Database' },
-    ],
-    relatedIds: ['mongodb', 'prisma', 'drizzle', 'nodejs'],
-    iconKey: 'postgresql',
-    accentColor: '#38BDF8',
-    coords: { x: 30, y: 78 },
-  },
-  {
-    id: 'htmlcss',
-    name: 'HTML & CSS',
-    category: 'frontend',
-    categoryLabel: 'Frontend',
-    tier: 2,
-    shortDesc: 'Semantic layouts, Flexbox/Grid & CSS animations',
-    usedIn: [
-      { name: 'Amazon Replica', projectId: 'amazon-clone', role: 'Layout Architecture' },
-    ],
-    relatedIds: ['javascript', 'tailwind', 'react'],
-    iconKey: 'htmlcss',
-    accentColor: '#FB923C',
-    coords: { x: 14, y: 64 },
-  },
-
-  // -------------------------------------------------------------
-  // TIER 3: TOOLS & CLOUD
-  // -------------------------------------------------------------
-  {
-    id: 'vite',
-    name: 'Vite',
-    category: 'tools',
-    categoryLabel: 'Tools',
-    tier: 3,
-    shortDesc: 'Lightning-fast module bundling & HMR',
-    usedIn: [
-      { name: 'Portfolio', projectId: 'portfolio', role: 'Build Tooling' },
-    ],
-    relatedIds: ['react', 'typescript', 'tailwind'],
-    iconKey: 'vite',
-    accentColor: '#A855F7',
-    coords: { x: 42, y: 16 },
-  },
-  {
-    id: 'git',
-    name: 'Git',
-    category: 'tools',
-    categoryLabel: 'Tools',
-    tier: 3,
-    shortDesc: 'Version control & branch isolation',
-    usedIn: [
-      { name: 'All Repositories', role: 'Version History' },
-    ],
-    relatedIds: ['docker', 'nodejs', 'react'],
-    iconKey: 'git',
-    accentColor: '#F97316',
-    coords: { x: 58, y: 16 },
-  },
-  {
-    id: 'docker',
-    name: 'Docker',
-    category: 'tools',
-    categoryLabel: 'Tools',
-    tier: 3,
-    shortDesc: 'Containerized environments & multi-stage builds',
-    usedIn: [
-      { name: 'Backend Stacks', role: 'Environment Isolation' },
-    ],
-    relatedIds: ['nodejs', 'git', 'postgresql'],
-    iconKey: 'docker',
-    accentColor: '#0EA5E9',
-    coords: { x: 82, y: 22 },
-  },
-  {
-    id: 'prisma',
-    name: 'Prisma / Drizzle',
-    category: 'database',
-    categoryLabel: 'Database',
-    tier: 3,
-    shortDesc: 'Type-safe SQL ORM & schema migrations',
-    usedIn: [
-      { name: 'Full-Stack Apps', role: 'Data Access Layer' },
-    ],
-    relatedIds: ['postgresql', 'mongodb', 'typescript'],
-    iconKey: 'prisma',
-    accentColor: '#10B981',
-    coords: { x: 70, y: 78 },
+    project: {
+      name: 'Lush Jewels',
+      type: 'REST API Controllers',
+      projectId: 'lush-jewels',
+    },
+    accentColor: '#CBD5E1',
+    angleDeg: 108, // ~3:45 - 4:00
+    radiusPercent: 37,
   },
   {
     id: 'cloudinary',
     name: 'Cloudinary',
+    subLabel: 'Image Management',
     category: 'tools',
-    categoryLabel: 'Tools',
-    tier: 3,
-    shortDesc: 'Cloud image transformations & CDN pipelines',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Asset Pipeline' },
+    categoryLabel: 'TOOLS & CLOUD',
+    categoryNumber: '04',
+    description: 'End-to-end cloud platform for media assets, dynamic transformations, image optimization, and CDN delivery.',
+    useCases: [
+      'Cloud Media Asset Storage',
+      'Dynamic Format Transformations',
+      'Global CDN Delivery',
+      'Secure Upload Signatures',
     ],
-    relatedIds: ['nodejs', 'express', 'react'],
-    iconKey: 'cloudinary',
-    accentColor: '#3B82F6',
-    coords: { x: 86, y: 64 },
+    project: {
+      name: 'Lush Jewels',
+      type: 'Product Media CDN',
+      projectId: 'lush-jewels',
+    },
+    accentColor: '#3448C5',
+    angleDeg: 144, // ~4:45 - 5:00
+    radiusPercent: 37,
   },
   {
-    id: 'razorpay',
-    name: 'Razorpay',
-    category: 'tools',
-    categoryLabel: 'Tools',
-    tier: 3,
-    shortDesc: 'Secure checkout integration & webhooks',
-    usedIn: [
-      { name: 'Lush Jewels', projectId: 'lush-jewels', role: 'Payment Gateway' },
+    id: 'mongodb',
+    name: 'MongoDB',
+    subLabel: 'NoSQL Database',
+    category: 'database',
+    categoryLabel: 'DATABASE',
+    categoryNumber: '03',
+    description: 'Document-oriented database offering dynamic BSON schemas, flexible indexing, and high-performance querying.',
+    useCases: [
+      'Flexible Schema Architecture',
+      'Aggregation Pipelines',
+      'Mongoose ODM Integration',
+      'Indexing & Fast Querying',
     ],
-    relatedIds: ['nodejs', 'express', 'react'],
-    iconKey: 'razorpay',
-    accentColor: '#2563EB',
-    coords: { x: 50, y: 90 },
+    project: {
+      name: 'Lush Jewels',
+      type: 'Database & Data Layer',
+      projectId: 'lush-jewels',
+    },
+    accentColor: '#22C55E',
+    angleDeg: 180, // 6:00
+    radiusPercent: 37,
+  },
+  {
+    id: 'git',
+    name: 'Git & GitHub',
+    subLabel: 'Version Control',
+    category: 'tools',
+    categoryLabel: 'TOOLS & CLOUD',
+    categoryNumber: '04',
+    description: 'Distributed version control and collaborative software repository management with branch isolation and CI/CD.',
+    useCases: [
+      'Branching & Release Workflows',
+      'Commit History Integrity',
+      'PR Review & Collaboration',
+      'CI/CD GitHub Actions',
+    ],
+    project: {
+      name: 'All Repositories',
+      type: 'Source Control & History',
+    },
+    accentColor: '#F05032',
+    angleDeg: 216, // ~7:15
+    radiusPercent: 37,
+  },
+  {
+    id: 'htmlcss',
+    name: 'HTML / CSS',
+    subLabel: 'Structure & Styling',
+    category: 'frontend',
+    categoryLabel: 'FRONTEND',
+    categoryNumber: '01',
+    description: 'Semantic markup standards and advanced modern CSS layout systems including Flexbox, CSS Grid, and responsive design.',
+    useCases: [
+      'Semantic Document Hierarchy',
+      'Flexbox & Grid Layouts',
+      'Accessibility & WCAG Standards',
+      'Responsive Mobile-First CSS',
+    ],
+    project: {
+      name: 'Amazon Replica',
+      type: 'Pixel-Perfect Architecture',
+      projectId: 'amazon-clone',
+    },
+    accentColor: '#E34F26',
+    angleDeg: 252, // ~8:30
+    radiusPercent: 37,
+  },
+  {
+    id: 'tailwind',
+    name: 'Tailwind CSS',
+    subLabel: 'Utility First CSS',
+    category: 'frontend',
+    categoryLabel: 'FRONTEND',
+    categoryNumber: '01',
+    description: 'Utility-first CSS framework enabling design token standardization, responsive layouts, and consistent spacing.',
+    useCases: [
+      'Design Token Standardization',
+      'Rapid Responsive Layouts',
+      'Theme & Dark Mode Integration',
+      'Component Utility Composition',
+    ],
+    project: {
+      name: 'Lush Jewels',
+      type: 'Design System & UI',
+      projectId: 'lush-jewels',
+    },
+    accentColor: '#38BDF8',
+    angleDeg: 288, // ~9:45
+    radiusPercent: 37,
+  },
+  {
+    id: 'typescript',
+    name: 'TypeScript',
+    subLabel: 'Typed JavaScript',
+    category: 'frontend',
+    categoryLabel: 'FRONTEND',
+    categoryNumber: '01',
+    description: 'Strict syntactic superset of JavaScript providing static type checking, contract safety, and IDE tooling.',
+    useCases: [
+      'Strict Type Checking',
+      'Contract & Interface Design',
+      'Refactoring Reliability',
+      'Predictable API Integration',
+    ],
+    project: {
+      name: 'Portfolio',
+      type: 'Interactive Portfolio Site',
+      projectId: 'portfolio',
+    },
+    accentColor: '#3178C6',
+    angleDeg: 324, // ~10:45
+    radiusPercent: 37,
+  },
+  {
+    id: 'restapi',
+    name: 'REST APIs',
+    subLabel: 'HTTP Architecture',
+    category: 'backend',
+    categoryLabel: 'BACKEND',
+    categoryNumber: '02',
+    description: 'Standardized HTTP resource communication protocol using REST conventions, JSON payloads, and stateless sessions.',
+    useCases: [
+      'Standardized CRUD Endpoints',
+      'JWT Authentication Headers',
+      'Clean Response Contracts',
+      'Stateless Request Pipelines',
+    ],
+    project: {
+      name: 'Lush Jewels',
+      type: 'Storefront & Admin API',
+      projectId: 'lush-jewels',
+    },
+    accentColor: '#A78BFA',
+    angleDeg: 0, // extra item in catalog for pagination 11
+    radiusPercent: 0, // catalog only
   },
 ];
 
-// Visual connection graph structure
-export interface TechConnection {
-  from: string;
-  to: string;
-  tier: 1 | 2;
-}
-
-export const TECH_CONNECTIONS: TechConnection[] = [
-  { from: 'core', to: 'react', tier: 1 },
-  { from: 'core', to: 'nodejs', tier: 1 },
-  { from: 'core', to: 'mongodb', tier: 1 },
-  { from: 'core', to: 'javascript', tier: 1 },
-
-  { from: 'react', to: 'typescript', tier: 1 },
-  { from: 'react', to: 'tailwind', tier: 1 },
-  { from: 'react', to: 'vite', tier: 2 },
-  { from: 'javascript', to: 'htmlcss', tier: 2 },
-  { from: 'javascript', to: 'react', tier: 1 },
-
-  { from: 'nodejs', to: 'express', tier: 1 },
-  { from: 'express', to: 'restapi', tier: 1 },
-  { from: 'nodejs', to: 'docker', tier: 2 },
-  { from: 'nodejs', to: 'git', tier: 2 },
-  { from: 'express', to: 'cloudinary', tier: 2 },
-
-  { from: 'mongodb', to: 'nodejs', tier: 1 },
-  { from: 'mongodb', to: 'postgresql', tier: 2 },
-  { from: 'postgresql', to: 'prisma', tier: 2 },
-  { from: 'mongodb', to: 'razorpay', tier: 2 },
-  { from: 'restapi', to: 'react', tier: 1 },
-];
+export const SKILLS_METRICS = [
+  {
+    id: 'tech-count',
+    title: '20+',
+    subtitle: 'Technologies',
+    icon: 'box',
+  },
+  {
+    id: 'full-stack',
+    title: 'Full Stack',
+    subtitle: 'End-to-End Development',
+    icon: 'code',
+  },
+  {
+    id: 'real-projects',
+    title: 'Real Projects',
+    subtitle: 'Built & Deployed',
+    icon: 'rocket',
+  },
+  {
+    id: 'always-learning',
+    title: 'Always Learning',
+    subtitle: 'Exploring New Technologies',
+    icon: 'zap',
+  },
+] as const;
