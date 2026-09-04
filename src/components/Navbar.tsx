@@ -11,8 +11,10 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: 'About', href: '#about', id: 'about' },
+  { label: 'Services', href: '#services', id: 'services' },
   { label: 'Skills', href: '#skills', id: 'skills' },
   { label: 'Work', href: '#projects', id: 'projects' },
+  { label: 'GitHub', href: '#github', id: 'github' },
   { label: 'Journey', href: '#journey', id: 'journey' },
   { label: 'Credentials', href: '#credentials', id: 'credentials' },
   { label: 'Contact', href: '#contact', id: 'contact' },
@@ -35,7 +37,7 @@ export const Navbar: React.FC = () => {
 
   // ScrollSpy using IntersectionObserver
   useEffect(() => {
-    const sections = ['hero', 'about', 'skills', 'projects', 'journey', 'contact'];
+    const sections = ['hero', 'about', 'services', 'skills', 'projects', 'github', 'journey', 'credentials', 'contact'];
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;

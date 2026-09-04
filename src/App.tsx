@@ -7,9 +7,10 @@ import { Footer } from './components/Footer';
 import { Hero } from './sections/Hero';
 import { Marquee } from './components/Marquee';
 import { About } from './sections/About';
+import { Services } from './sections/Services';
 import { Skills } from './sections/Skills';
 import { Projects } from './sections/Projects';
-import { Services } from './sections/Services';
+import { GithubSection } from './sections/GithubSection';
 import { Experience } from './sections/Experience';
 import { Credentials } from './sections/Credentials';
 import { Contact } from './sections/Contact';
@@ -34,25 +35,28 @@ function App() {
         {/* Infinite Scrolling Ticker */}
         <Marquee />
 
-        {/* Philosophy Intro */}
+        {/* Philosophy Intro - 01 */}
         <About />
 
-        {/* Skill Category Grids */}
-        <Skills />
-
-        {/* Portfolio Showcase */}
-        <Projects />
-
-        {/* Capabilities Grid */}
+        {/* Capabilities Grid - 02 */}
         <Services />
 
-        {/* Journey Timeline */}
+        {/* Skill Category Grids - 03 */}
+        <Skills />
+
+        {/* Portfolio Showcase - 04 */}
+        <Projects />
+
+        {/* GitHub Metrics - 05 */}
+        <GithubSection />
+
+        {/* Journey Timeline - 06 */}
         <Experience />
 
-        {/* Certificates & Letters */}
+        {/* Certificates & Letters - 07 */}
         <Credentials />
 
-        {/* Contact Form Details */}
+        {/* Contact Form Details - 08 */}
         <Contact />
       </main>
 

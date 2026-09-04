@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, GraduationCap, Briefcase } from 'lucide-react';
 import { TIMELINE_ITEMS } from '../utils/constants';
-import { fadeInUp, staggerContainer, itemReveal } from '../utils/animations';
+import { SectionHeader } from '../components/SectionHeader';
+import { staggerContainer, itemReveal } from '../utils/animations';
 
 export const Experience: React.FC = () => {
   return (
@@ -12,24 +13,12 @@ export const Experience: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Section Header */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-20%' }}
-          className="max-w-2xl text-center mx-auto mb-16 space-y-4"
-        >
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-brand">
-            05 // History
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
-            My Development Journey
-          </h2>
-          <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-            A transparent timeline of my education, projects, freelance experiences, and core learning milestones.
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="06 // History"
+          title="My Development"
+          highlightText="Journey"
+          subtitle="A transparent timeline of my education, projects, freelance experiences, and core learning milestones."
+        />
 
         {/* Timeline Path container */}
         <div className="relative max-w-4xl mx-auto">

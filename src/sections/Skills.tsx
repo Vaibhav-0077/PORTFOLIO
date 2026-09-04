@@ -6,6 +6,7 @@ import { TECH_ITEMS, CATEGORY_FILTERS } from '../data/techStackData';
 import type { TechItem } from '../data/techStackData';
 import { TechGraph } from '../components/tech-stack/TechGraph';
 import { TechInspector } from '../components/tech-stack/TechInspector';
+import { SectionHeader } from '../components/SectionHeader';
 
 export const Skills: React.FC = () => {
   // Default to React (index 0) matching the mockup
@@ -51,6 +52,13 @@ export const Skills: React.FC = () => {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
         
+        <SectionHeader
+          number="03 // Toolkit"
+          title="Engineered for"
+          highlightText="Scale"
+          subtitle="Explore the technologies and frameworks I use to bring these ideas to life."
+        />
+
         {/* Top Centered Category Navigation Pills */}
         <motion.div
           variants={fadeInUp}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Terminal, Code, Database, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../utils/constants';
-import { GithubStats } from '../components/GithubStats';
+import { SectionHeader } from '../components/SectionHeader';
 import { fadeInUp, staggerContainer, itemReveal } from '../utils/animations';
 
 export const About: React.FC = () => {
@@ -16,24 +16,12 @@ export const About: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
         
-        {/* Section Header */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-20%' }}
-          className="max-w-3xl text-center md:text-left space-y-3"
-        >
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-brand">
-            01 // About Me
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
-            More than just code.
-          </h2>
-          <p className="text-base text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
-            Get to know the developer behind the applications — my background, core values, and development philosophies.
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="01 // About Me"
+          title="More than just"
+          highlightText="code."
+          subtitle="Get to know the developer behind the applications — my background, core values, and development philosophies."
+        />
 
         {/* View Selector Tabs (Mobile & Tablet Toggle) */}
         <div className="flex lg:hidden items-center justify-center space-x-2 p-1.5 rounded-full border border-border-light dark:border-[#222634] bg-surface-light dark:bg-[#101217] max-w-xs mx-auto">
@@ -299,10 +287,6 @@ export const About: React.FC = () => {
           </motion.div>
 
         </div>
-
-        {/* Live GitHub Metrics Integration */}
-        <GithubStats />
-
       </div>
     </section>
   );

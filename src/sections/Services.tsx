@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../utils/constants';
-import { fadeInUp, staggerContainer, itemReveal } from '../utils/animations';
+import { SectionHeader } from '../components/SectionHeader';
+import { staggerContainer, itemReveal } from '../utils/animations';
 
 export const Services: React.FC = () => {
   return (
@@ -12,24 +13,12 @@ export const Services: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Section Header */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-20%' }}
-          className="max-w-2xl text-center mx-auto mb-16 space-y-4"
-        >
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-brand">
-            04 // Services
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
-            What I Can Build
-          </h2>
-          <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-            Modern, responsive, and secure full-stack software products built with industry-standard web engineering frameworks.
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="02 // Services"
+          title="What I Can"
+          highlightText="Build"
+          subtitle="Modern, responsive, and secure full-stack software products built with industry-standard web engineering frameworks."
+        />
 
         {/* Services Grid */}
         <motion.div

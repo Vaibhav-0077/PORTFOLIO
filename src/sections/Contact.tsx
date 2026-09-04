@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Linkedin, FileText, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { SOCIAL_LINKS } from '../utils/constants';
+import { SectionHeader } from '../components/SectionHeader';
 import { fadeInUp, itemReveal, staggerContainer } from '../utils/animations';
 
 interface FormState {
@@ -109,24 +110,12 @@ export const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Section Heading */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-20%' }}
-          className="max-w-2xl text-center mx-auto mb-16 space-y-4"
-        >
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-brand">
-            06 // Contact
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
-            Let's build something meaningful.
-          </h2>
-          <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-            Have a project concept, backend inquiry, or hiring opportunity? Send a message and let's start talking.
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="08 // Contact"
+          title="Let's build something"
+          highlightText="meaningful."
+          subtitle="Have a project concept, backend inquiry, or hiring opportunity? Send a message and let's start talking."
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
           

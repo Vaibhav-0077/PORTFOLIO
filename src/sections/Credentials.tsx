@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, FileSignature, ExternalLink } from 'lucide-react';
 import { CREDENTIALS } from '../utils/constants';
-import { fadeInUp, staggerContainer, itemReveal } from '../utils/animations';
+import { SectionHeader } from '../components/SectionHeader';
+import { staggerContainer, itemReveal } from '../utils/animations';
 
 export const Credentials: React.FC = () => {
   return (
@@ -12,24 +13,12 @@ export const Credentials: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Section Header */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-20%' }}
-          className="max-w-2xl text-center mx-auto mb-16 space-y-4"
-        >
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-brand">
-            06 // Credentials
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">
-            Certificates & Letters
-          </h2>
-          <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-            Official documentation verifying academic achievements, professional internships, and continuous technical learning.
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="07 // Credentials"
+          title="Certificates &"
+          highlightText="Letters"
+          subtitle="Official documentation verifying academic achievements, professional internships, and continuous technical learning."
+        />
 
         {/* Dense Credentials Grid */}
         <motion.div
