@@ -108,7 +108,7 @@ export const Contact: React.FC = () => {
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
       <div className="absolute inset-0 bg-noise opacity-[0.012] dark:opacity-[0.015] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <SectionHeader
           number="08 // Contact"
@@ -117,7 +117,7 @@ export const Contact: React.FC = () => {
           subtitle="Have a project concept, backend inquiry, or hiring opportunity? Send a message and let's start talking."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-7xl mx-auto">
           
           {/* Left Column: Direct Links & Coordinates */}
           <motion.div

@@ -102,7 +102,7 @@ export const ProjectDetail: React.FC = () => {
 
       {/* Top Floating Glass Navigation Header */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-surface-light/80 dark:bg-[#08090C]/80 border-b border-border-light/60 dark:border-[#1E222D]/80 transition-colors">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           {/* Back button */}
           <Link
             to="/#projects"
@@ -157,7 +157,7 @@ export const ProjectDetail: React.FC = () => {
       </header>
 
       {/* Main Content Body */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-16">
         
         {/* ========================================================= */}
         {/* HERO SECTION */}
@@ -265,7 +265,7 @@ export const ProjectDetail: React.FC = () => {
         {/* INTERACTIVE NAVIGATION TABS */}
         {/* ========================================================= */}
         <div className="sticky top-16 sm:top-20 z-30 py-3 backdrop-blur-lg bg-bg-light/85 dark:bg-bg-dark/85 border-y border-border-light/60 dark:border-[#1E222D]/60 -mx-4 sm:-mx-6 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <div className="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar">
             {[
               { id: 'overview', label: '01 // Overview & Scope' },
               { id: 'features', label: '02 // Core Features' },

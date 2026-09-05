@@ -14,7 +14,7 @@ export const About: React.FC = () => {
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
       <div className="absolute inset-0 bg-grid opacity-25 pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
         
         <SectionHeader
           number="01 // About Me"
