@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
       {/* Background Subtle Elements */}
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
         {/* Left Info */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
           <div className="font-display font-bold text-lg tracking-tight text-text-primary-light dark:text-text-primary-dark">

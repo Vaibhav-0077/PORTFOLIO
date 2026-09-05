@@ -50,7 +50,7 @@ export const Skills: React.FC = () => {
       <div className="absolute inset-0 bg-noise opacity-[0.015] pointer-events-none" />
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-purple-500/[0.04] dark:bg-purple-600/[0.06] rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
         
         <SectionHeader
           number="03 // Toolkit"

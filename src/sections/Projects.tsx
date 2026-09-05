@@ -21,7 +21,7 @@ export const Projects: React.FC = () => {
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-600/10 dark:bg-sky-600/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 bg-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         <SectionHeader
           number="04 // Showcase"

@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
       {/* Background Radial Light Accent */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] rounded-full bg-accent-brand/5 dark:bg-accent-brand/[0.03] blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+      <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
         {/* Left Side: Editorial Typography & Actions */}
         <motion.div
           variants={staggerContainer(0.12, 0.1)}

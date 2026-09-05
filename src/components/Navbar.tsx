@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
           : 'bg-transparent py-6 border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Monogram Logo */}
         <a
           href="#hero"
