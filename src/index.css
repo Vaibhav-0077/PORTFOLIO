@@ -32,9 +32,10 @@
   color-scheme: light dark;
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling & Global Layout Scale */
 html {
   scroll-behavior: smooth;
+  font-size: 90%; /* Proportional downscaling: 1rem becomes ~14.4px instead of 16px */
 }
 
 body {
