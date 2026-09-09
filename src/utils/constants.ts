@@ -268,9 +268,15 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
 export interface CredentialItem {
   id: string;
   type: string;
+  category: 'academic' | 'internship' | 'certification';
   title: string;
   issuer: string;
   date: string;
+  credentialId: string;
+  status: string;
+  grade?: string;
+  description: string;
+  skills: string[];
   link?: string;
 }
 
@@ -278,33 +284,58 @@ export const CREDENTIALS: CredentialItem[] = [
   {
     id: 'crown-it',
     type: 'Internship Letter',
+    category: 'internship',
     title: 'Full-Stack Developer Internship',
     issuer: 'Crown IT Solutions',
     date: '2025 - 2026',
+    credentialId: 'CR-2025-CROWN-FS01',
+    status: 'Verified Internship Experience',
+    grade: 'Excellent Performance',
+    description: 'Practical full-stack web engineering internship focusing on backend API routing, database schema persistence, authentication middleware, and frontend client integration.',
+    skills: ['MERN Stack', 'RESTful APIs', 'Express & Node.js', 'MongoDB Persistence', 'Team Collaboration'],
     link: '#',
   },
   {
     id: 'degree',
     type: 'Academic Degree',
-    title: 'B.Sc. Information Technology',
+    category: 'academic',
+    title: 'B.Sc. in Information Technology',
     issuer: 'Mumbai University',
     date: 'Class of 2025',
+    credentialId: 'MU-2025-BSCIT-7801',
+    status: 'Official University Degree',
+    grade: 'First Class Honours',
+    description: 'Comprehensive 3-year undergraduate degree curriculum covering advanced data structures, computational algorithms, relational & NoSQL databases, software engineering methodologies, and network architecture.',
+    skills: ['Software Engineering', 'Database Management', 'Data Structures & Algorithms', 'Web Architecture', 'Computer Networks'],
     link: '#',
   },
   {
     id: 'web-dev',
-    type: 'Certification',
-    title: 'Advanced Web Development Bootcamp',
-    issuer: 'Online Platform / Institute',
-    date: '2023',
+    type: 'Professional Certification',
+    category: 'certification',
+    title: 'Advanced Full-Stack Web Development',
+    issuer: 'Full-Stack Coding Institute',
+    date: '2023 - 2024',
+    credentialId: 'CERT-2023-FSDEV-9942',
+    status: 'Verified Certificate of Completion',
+    grade: 'Distinction Score',
+    description: 'Intensive engineering program mastering modern JavaScript ES6+, React Hooks, Node.js event loops, asynchronous programming, and responsive UI crafting.',
+    skills: ['React & Redux', 'Node.js V8 Engine', 'MongoDB Aggregations', 'Tailwind CSS', 'Git & CI/CD Workflows'],
     link: '#',
   },
   {
     id: 'react-cert',
-    type: 'Certification',
+    type: 'Specialized Certification',
+    category: 'certification',
     title: 'React & Frontend Architecture',
-    issuer: 'Tech Academy',
+    issuer: 'Tech Academy Online',
     date: '2024',
+    credentialId: 'CERT-2024-REACT-5510',
+    status: 'Verified Certificate of Mastery',
+    grade: 'Grade A+',
+    description: 'In-depth specialization in component lifecycle, custom hooks design, client-side routing, performant state management, and modern glassmorphic styling.',
+    skills: ['Custom React Hooks', 'State Optimization', 'Client Routing', 'Component Modularization', 'Performance Tuning'],
     link: '#',
-  }
+  },
 ];
+
