@@ -26,13 +26,13 @@ export const Contact: React.FC = () => {
   const validate = (): boolean => {
     const tempErrors: FormErrors = {};
     if (!form.name.trim()) tempErrors.name = 'Name is required';
-    
+
     if (!form.email.trim()) {
       tempErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       tempErrors.email = 'Please enter a valid email address';
     }
-    
+
     if (!form.message.trim()) {
       tempErrors.message = 'Message is required';
     } else if (form.message.trim().length < 10) {
@@ -61,7 +61,7 @@ export const Contact: React.FC = () => {
 
     try {
       const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
-      
+
       if (!accessKey) {
         console.error("Web3Forms API key is missing. Please add VITE_WEB3FORMS_KEY to your .env file.");
         setSubmitStatus('error');
@@ -109,7 +109,7 @@ export const Contact: React.FC = () => {
       <div className="absolute inset-0 bg-noise opacity-[0.012] dark:opacity-[0.015] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         <SectionHeader
           number="08 // Contact"
           title="Let's build something"
@@ -118,7 +118,7 @@ export const Contact: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-7xl mx-auto">
-          
+
           {/* Left Column: Direct Links & Coordinates */}
           <motion.div
             variants={staggerContainer(0.12, 0.1)}
@@ -206,7 +206,7 @@ export const Contact: React.FC = () => {
             className="lg:col-span-7 w-full"
           >
             <div className="relative p-6 sm:p-8 rounded-3xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark shadow-xl overflow-hidden">
-              
+
               {/* Form elements */}
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Name */}
@@ -221,9 +221,8 @@ export const Contact: React.FC = () => {
                     value={form.name}
                     onChange={handleInputChange}
                     disabled={isSubmitting}
-                    className={`w-full px-4 py-3.5 rounded-xl border ${
-                      errors.name ? 'border-rose-500/70 focus:ring-rose-500/30' : 'border-border-light dark:border-border-dark focus:border-accent-brand/50 focus:ring-accent-brand/35'
-                    } bg-elevated-light dark:bg-elevated-dark text-text-primary-light dark:text-text-primary-dark text-sm placeholder-text-secondary-light/40 dark:placeholder-text-secondary-dark/30 focus:outline-none focus:ring-4 transition-all duration-300`}
+                    className={`w-full px-4 py-3.5 rounded-xl border ${errors.name ? 'border-rose-500/70 focus:ring-rose-500/30' : 'border-border-light dark:border-border-dark focus:border-accent-brand/50 focus:ring-accent-brand/35'
+                      } bg-elevated-light dark:bg-elevated-dark text-text-primary-light dark:text-text-primary-dark text-sm placeholder-text-secondary-light/40 dark:placeholder-text-secondary-dark/30 focus:outline-none focus:ring-4 transition-all duration-300`}
                     placeholder="Enter your name"
                   />
                   {errors.name && (
@@ -243,9 +242,8 @@ export const Contact: React.FC = () => {
                     value={form.email}
                     onChange={handleInputChange}
                     disabled={isSubmitting}
-                    className={`w-full px-4 py-3.5 rounded-xl border ${
-                      errors.email ? 'border-rose-500/70 focus:ring-rose-500/30' : 'border-border-light dark:border-border-dark focus:border-accent-brand/50 focus:ring-accent-brand/35'
-                    } bg-elevated-light dark:bg-elevated-dark text-text-primary-light dark:text-text-primary-dark text-sm placeholder-text-secondary-light/40 dark:placeholder-text-secondary-dark/30 focus:outline-none focus:ring-4 transition-all duration-300`}
+                    className={`w-full px-4 py-3.5 rounded-xl border ${errors.email ? 'border-rose-500/70 focus:ring-rose-500/30' : 'border-border-light dark:border-border-dark focus:border-accent-brand/50 focus:ring-accent-brand/35'
+                      } bg-elevated-light dark:bg-elevated-dark text-text-primary-light dark:text-text-primary-dark text-sm placeholder-text-secondary-light/40 dark:placeholder-text-secondary-dark/30 focus:outline-none focus:ring-4 transition-all duration-300`}
                     placeholder="you@example.com"
                   />
                   {errors.email && (
@@ -265,9 +263,8 @@ export const Contact: React.FC = () => {
                     value={form.message}
                     onChange={handleInputChange}
                     disabled={isSubmitting}
-                    className={`w-full px-4 py-3.5 rounded-xl border ${
-                      errors.message ? 'border-rose-500/70 focus:ring-rose-500/30' : 'border-border-light dark:border-border-dark focus:border-accent-brand/50 focus:ring-accent-brand/35'
-                    } bg-elevated-light dark:bg-elevated-dark text-text-primary-light dark:text-text-primary-dark text-sm placeholder-text-secondary-light/40 dark:placeholder-text-secondary-dark/30 focus:outline-none focus:ring-4 transition-all duration-300 resize-none`}
+                    className={`w-full px-4 py-3.5 rounded-xl border ${errors.message ? 'border-rose-500/70 focus:ring-rose-500/30' : 'border-border-light dark:border-border-dark focus:border-accent-brand/50 focus:ring-accent-brand/35'
+                      } bg-elevated-light dark:bg-elevated-dark text-text-primary-light dark:text-text-primary-dark text-sm placeholder-text-secondary-light/40 dark:placeholder-text-secondary-dark/30 focus:outline-none focus:ring-4 transition-all duration-300 resize-none`}
                     placeholder="Hi Vaibhav, I would like to chat about..."
                   />
                   {errors.message && (
@@ -367,7 +364,7 @@ export const Contact: React.FC = () => {
               </AnimatePresence>
             </div>
           </motion.div>
-          
+
         </div>
       </div>
     </section>

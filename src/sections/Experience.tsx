@@ -12,7 +12,7 @@ export const Experience: React.FC = () => {
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         <SectionHeader
           number="06 // History"
           title="My Development"
@@ -41,9 +41,8 @@ export const Experience: React.FC = () => {
                 <motion.div
                   key={idx}
                   variants={itemReveal}
-                  className={`relative flex flex-col md:flex-row ${
-                    isEven ? 'md:flex-row-reverse' : ''
-                  } items-start md:items-center`}
+                  className={`relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''
+                    } items-start md:items-center`}
                 >
                   {/* Timeline Node Pin (Middle/Left) */}
                   <div className="absolute left-[16px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark flex items-center justify-center text-accent-brand shadow-sm z-10 transition-colors duration-300">
@@ -57,11 +56,10 @@ export const Experience: React.FC = () => {
                   {/* Spacer or Card Container (Left on desktop) */}
                   <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
                     <div
-                      className={`relative p-6 rounded-2xl border bg-surface-light dark:bg-surface-dark transition-all duration-300 shadow-sm hover:shadow ${
-                        item.special
+                      className={`relative p-6 rounded-2xl border bg-surface-light dark:bg-surface-dark transition-all duration-300 shadow-sm hover:shadow ${item.special
                           ? 'border-accent-brand dark:border-purple-500 shadow-[0_0_15px_rgba(139,92,246,0.15)] dark:shadow-[0_0_25px_rgba(139,92,246,0.2)] hover:shadow-[0_0_25px_rgba(139,92,246,0.3)]'
                           : 'border-border-light dark:border-border-dark hover:border-accent-brand/40 dark:hover:border-accent-brand/40'
-                      } ${isEven ? 'md:text-left' : 'md:text-right'}`}
+                        } ${isEven ? 'md:text-left' : 'md:text-right'}`}
                     >
                       {item.special && (
                         <div className="absolute -top-[1px] -right-[1px] px-3 py-1 bg-gradient-to-r from-accent-brand to-purple-500 text-white text-[10px] font-mono font-bold tracking-widest uppercase rounded-bl-xl rounded-tr-2xl shadow-sm">
@@ -69,9 +67,8 @@ export const Experience: React.FC = () => {
                         </div>
                       )}
                       {/* Year tag & icon */}
-                      <div className={`flex items-center gap-2 mb-2 ${
-                        isEven ? 'justify-start' : 'justify-start md:justify-end'
-                      }`}>
+                      <div className={`flex items-center gap-2 mb-2 ${isEven ? 'justify-start' : 'justify-start md:justify-end'
+                        }`}>
                         <Calendar className="w-3.5 h-3.5 text-accent-brand shrink-0" />
                         <span className="font-mono text-xs font-bold text-accent-brand">
                           {item.year}

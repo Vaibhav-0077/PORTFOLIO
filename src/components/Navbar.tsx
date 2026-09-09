@@ -83,8 +83,8 @@ export const Navbar: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-40 theme-transition ${isScrolled
-          ? 'bg-surface-light/85 dark:bg-surface-dark/85 backdrop-blur-md border-b border-border-light dark:border-border-dark py-4 shadow-sm'
-          : 'bg-transparent py-6 border-b border-transparent'
+        ? 'bg-surface-light/85 dark:bg-surface-dark/85 backdrop-blur-md border-b border-border-light dark:border-border-dark py-4 shadow-sm'
+        : 'bg-transparent py-6 border-b border-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -107,8 +107,8 @@ export const Navbar: React.FC = () => {
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
               className={`relative py-1 text-sm font-medium tracking-wide transition-colors duration-300 cursor-pointer ${activeSection === link.id
-                  ? 'text-accent-brand font-semibold'
-                  : 'text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark'
+                ? 'text-accent-brand font-semibold'
+                : 'text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark'
                 }`}
             >
               {link.label}
@@ -157,8 +157,8 @@ export const Navbar: React.FC = () => {
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-lg font-medium tracking-wide pb-1 border-b border-border-light/40 dark:border-border-dark/45 cursor-pointer ${activeSection === link.id
-                    ? 'text-accent-brand font-bold border-accent-brand'
-                    : 'text-text-secondary-light dark:text-text-secondary-dark'
+                  ? 'text-accent-brand font-bold border-accent-brand'
+                  : 'text-text-secondary-light dark:text-text-secondary-dark'
                   }`}
               >
                 {link.label}
