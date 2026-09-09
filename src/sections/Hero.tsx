@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
           {/* Heading */}
           <motion.h1
             variants={itemReveal}
-            className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark leading-[1.1]"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark leading-[1.1]"
           >
             Hi, I'm <span className="text-accent-brand text-glow">Vaibhav</span>.<br />
             Building digital experiences that feel as good as they work.
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
           {/* Supporting paragraph */}
           <motion.p
             variants={itemReveal}
-            className="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans"
+            className="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans"
           >
             Focused on engineering high-performance MERN web applications, robust backends, intuitive visual layouts, and interactive experiences.
           </motion.p>

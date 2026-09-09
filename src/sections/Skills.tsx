@@ -44,7 +44,7 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 sm:py-28 relative overflow-hidden theme-transition bg-slate-50/50 dark:bg-[#07090F]">
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden theme-transition bg-slate-50/50 dark:bg-[#07090F]">
       {/* Subtle Background Grid & Ambient Glows */}
       <div className="absolute inset-0 bg-grid opacity-10 dark:opacity-20 pointer-events-none" />
       <div className="absolute inset-0 bg-noise opacity-[0.015] pointer-events-none" />

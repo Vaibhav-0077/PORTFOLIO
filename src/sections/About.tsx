@@ -9,12 +9,12 @@ export const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'profile' | 'terminal'>('profile');
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden theme-transition">
+    <section id="about" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden theme-transition">
       {/* Background Subtle Noise & Grid Layer */}
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
       <div className="absolute inset-0 bg-grid opacity-25 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-8 sm:space-y-10">
         
         <SectionHeader
           number="01 // About Me"

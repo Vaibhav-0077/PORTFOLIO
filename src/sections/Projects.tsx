@@ -15,7 +15,7 @@ export const Projects: React.FC = () => {
     : PROJECTS.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-28 relative overflow-hidden theme-transition">
+    <section id="projects" className="py-18 sm:py-22 lg:py-26 relative overflow-hidden theme-transition">
       {/* Dynamic Glow Accents */}
       <div className="absolute top-1/3 -left-32 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-600/10 dark:bg-sky-600/15 rounded-full blur-[120px] pointer-events-none" />

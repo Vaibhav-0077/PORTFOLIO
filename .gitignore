@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Project documentation markdown files
+country-explorer.md
+amazon-replica.md
+hotel-management.md
+lush-jewels.md
+

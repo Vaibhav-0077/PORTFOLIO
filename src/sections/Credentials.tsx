@@ -7,7 +7,7 @@ import { staggerContainer, itemReveal } from '../utils/animations';
 
 export const Credentials: React.FC = () => {
   return (
-    <section id="credentials" className="py-24 relative overflow-hidden theme-transition">
+    <section id="credentials" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden theme-transition">
       {/* Background layer */}
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
 
