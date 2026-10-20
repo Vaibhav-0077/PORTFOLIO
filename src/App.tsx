@@ -72,8 +72,8 @@ function App() {
         {/* Reset Scroll position on route navigation */}
         <ScrollToTop />
 
-        {/* Absolute Noise Overlay globally on top */}
-        <div className="fixed inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none z-30" />
+        {/* Hardware-accelerated global noise texture */}
+        <div className="fixed inset-0 bg-noise opacity-30 dark:opacity-40 pointer-events-none z-30" />
         
         {/* Custom Follower Cursor */}
         <CustomCursor />
