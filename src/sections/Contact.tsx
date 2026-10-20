@@ -106,7 +106,6 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden theme-transition bg-elevated-light/40 dark:bg-[#0C0E12]">
       {/* Background layer */}
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
-      <div className="absolute inset-0 bg-noise opacity-[0.012] dark:opacity-[0.015] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 

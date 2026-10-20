@@ -27,8 +27,7 @@ export const Credentials: React.FC = () => {
   return (
     <section id="credentials" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden theme-transition">
       {/* Background ambient lighting */}
-      <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(147,51,234,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(147,51,234,0.12)_0%,_transparent_70%)]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
         {/* Section Header */}

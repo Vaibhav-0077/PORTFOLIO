@@ -16,9 +16,9 @@ export const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-18 sm:py-22 lg:py-26 relative overflow-hidden theme-transition">
-      {/* Dynamic Glow Accents */}
-      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-600/10 dark:bg-sky-600/15 rounded-full blur-[120px] pointer-events-none" />
+      {/* Dynamic Glow Accents (GPU-efficient radial gradients) */}
+      <div className="absolute top-1/3 -left-32 w-96 h-96 rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(147,51,234,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(147,51,234,0.12)_0%,_transparent_70%)]" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(14,165,233,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(14,165,233,0.12)_0%,_transparent_70%)]" />
       <div className="absolute inset-0 bg-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

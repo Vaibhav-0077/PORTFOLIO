@@ -22,12 +22,11 @@ export const Hero: React.FC = () => {
       id="hero"
       className="relative min-h-[90vh] md:min-h-[100vh] flex items-center justify-center pt-24 md:pt-0 overflow-hidden"
     >
-      {/* Editorial Grid and Noise background */}
+      {/* Editorial Grid background */}
       <div className="absolute inset-0 bg-grid opacity-70 pointer-events-none" />
-      <div className="absolute inset-0 bg-noise pointer-events-none" />
 
       {/* Background Radial Light Accent */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] rounded-full bg-accent-brand/5 dark:bg-accent-brand/[0.03] blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(139,92,246,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(139,92,246,0.05)_0%,_transparent_70%)]" />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
         {/* Left Side: Editorial Typography & Actions */}
@@ -101,7 +100,7 @@ export const Hero: React.FC = () => {
           className="lg:col-span-5 relative w-full flex items-center justify-center mt-6 lg:mt-0"
         >
           {/* Glowing Radial Backdrop behind 3D Canvas in Dark Mode */}
-          <div className="absolute w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full bg-gradient-to-tr from-accent-brand/20 via-purple-600/10 to-cyan-500/15 blur-3xl pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-500" />
+          <div className="absolute w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle,_rgba(139,92,246,0.18)_0%,_rgba(56,189,248,0.08)_40%,_transparent_70%)]" />
 
           <CanvasContainer />
 

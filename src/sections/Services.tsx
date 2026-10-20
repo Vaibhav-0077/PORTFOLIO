@@ -138,9 +138,8 @@ export const Services: React.FC = () => {
     <section id="services" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden theme-transition bg-elevated-light/40 dark:bg-[#0C0E12]">
       {/* Ambient background layers */}
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
-      <div className="absolute inset-0 bg-noise opacity-[0.012] dark:opacity-[0.015] pointer-events-none" />
-      <div className="absolute top-1/4 right-10 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/3 left-10 w-96 h-96 bg-indigo-600/10 dark:bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 right-10 w-96 h-96 rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(147,51,234,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(147,51,234,0.12)_0%,_transparent_70%)]" />
+      <div className="absolute bottom-1/3 left-10 w-96 h-96 rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(99,102,241,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(99,102,241,0.12)_0%,_transparent_70%)]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
         {/* Section Header */}
