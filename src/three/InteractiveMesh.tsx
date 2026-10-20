@@ -150,7 +150,7 @@ export const InteractiveMesh: React.FC = () => {
 
       {/* Center Core: Refractive Morphing Liquid Glass Sphere */}
       <mesh ref={innerMeshRef} position={[0, 0, 0]}>
-        <sphereGeometry args={[1.1, 64, 64]} />
+        <sphereGeometry args={[1.1, 40, 40]} />
         <MeshDistortMaterial
           color={isDark ? '#2E1065' : '#EEF2FF'} // deep violet crystal in dark mode, pale indigo-white in light mode
           roughness={0.03}

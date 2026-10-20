@@ -65,11 +65,25 @@ const FallbackVisual: React.FC = () => {
 
 export const CanvasContainer: React.FC = () => {
   const [hasWebGL, setHasWebGL] = useState<boolean | null>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(true);
 
   useEffect(() => {
     // Check support on mount
     setHasWebGL(checkWebGLSupport());
   }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [hasWebGL]);
 
   // Show loading indicator until WebGL checks complete
   if (hasWebGL === null) {
@@ -86,10 +100,14 @@ export const CanvasContainer: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full h-[320px] md:h-[450px] flex items-center justify-center cursor-grab active:cursor-grabbing">
+    <div
+      ref={containerRef}
+      className="relative w-full h-[320px] md:h-[450px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+    >
       <Suspense fallback={<Loader />}>
         <Canvas
-          gl={{ antialias: true, alpha: true }}
+          frameloop={isInView ? 'always' : 'never'}
+          gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
           dpr={[1, 1.5]} // Optimize DPR for performance: clamp at 1.5
           camera={{ position: [0, 0, 5], fov: 45 }}
           className="w-full h-full bg-transparent"
