@@ -12,8 +12,8 @@ interface SectionHeaderProps {
 export const SectionHeader: React.FC<SectionHeaderProps> = ({ number, title, highlightText, subtitle }) => {
   return (
     <div className="relative w-full py-6 sm:py-10 flex flex-col items-center justify-center text-center">
-      {/* Background Glow / Blur element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[400px] bg-purple-600/[0.08] dark:bg-purple-500/[0.12] rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
+      {/* Background Soft Glow element (GPU-efficient radial gradient) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[400px] rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(139,92,246,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(168,85,247,0.12)_0%,_transparent_70%)]" />
       
       <motion.div
         variants={fadeInUp}

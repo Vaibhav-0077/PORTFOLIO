@@ -12,9 +12,6 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="w-full bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark py-12 relative overflow-hidden theme-transition">
-      {/* Background Subtle Elements */}
-      <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.02] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
         {/* Left Info */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">

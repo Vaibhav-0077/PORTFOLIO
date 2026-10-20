@@ -54,7 +54,7 @@ export const TechGraph: React.FC<TechGraphProps> = ({
       <div className="relative w-full h-[520px] sm:h-[570px] rounded-3xl border border-slate-200/80 dark:border-[#1E2435] bg-white/70 dark:bg-[#07090F]/90 backdrop-blur-xl overflow-hidden select-none shadow-[0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_16px_50px_rgba(0,0,0,0.35)]">
         {/* Ambient Glows & Background Grid */}
         <div className="absolute inset-0 bg-grid opacity-10 dark:opacity-20 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] bg-purple-500/[0.07] dark:bg-purple-600/[0.12] rounded-full blur-[90px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full pointer-events-none bg-[radial-gradient(circle,_rgba(168,85,247,0.08)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle,_rgba(168,85,247,0.12)_0%,_transparent_70%)]" />
 
         {/* SVG Radial Connector Lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
