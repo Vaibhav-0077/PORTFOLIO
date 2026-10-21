@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, CheckCircle, ExternalLink, ShieldCheck, Terminal, Database, Globe, ShoppingCart } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, CheckCircle, ExternalLink, ShieldCheck, Terminal, Database, Globe, ShoppingCart, Mic, Radio, Volume2, Cpu, Activity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Project } from '../utils/constants';
 
@@ -15,6 +15,90 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   // Render a creative, developer-grade UI mockup tailored to each project (No emojis!)
   const renderVisualMockup = () => {
+    if (id === 'vaani-ai') {
+      return (
+        <div className="w-full h-full bg-[#08090C] relative flex flex-col justify-between p-5 select-none overflow-hidden font-sans">
+          <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-600/15 via-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+          {/* WebRTC LiveKit Connection Header */}
+          <div className="flex justify-between items-center border-b border-[#1A1D28] pb-3 relative z-10">
+            <div className="flex items-center gap-2">
+              <div className="relative flex items-center justify-center">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute opacity-75" />
+                <span className="w-2 h-2 rounded-full bg-emerald-400 relative" />
+              </div>
+              <span className="text-[10px] font-mono text-cyan-300 font-bold flex items-center gap-1.5">
+                <Radio className="w-3 h-3 text-cyan-400" />
+                LIVEKIT ROOM // vaani-duplex
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                Groq LPU (~200ms)
+              </span>
+            </div>
+          </div>
+
+          {/* Voice Waveform Visualizer & Activity Orb */}
+          <div className="my-auto grid grid-cols-12 gap-3 items-center relative z-10">
+            <div className="col-span-5 relative">
+              <div className="w-full h-24 rounded-xl bg-gradient-to-br from-[#0B132B]/80 to-[#1C1635]/80 border border-cyan-500/30 flex flex-col items-center justify-center relative overflow-hidden shadow-inner group/orb">
+                <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-cyan-500/20 text-[8px] font-mono text-cyan-300 flex items-center gap-1">
+                  <Activity className="w-2.5 h-2.5 animate-pulse text-cyan-400" />
+                  RMS VAD
+                </div>
+                {/* Glowing Pulsing Voice Orb */}
+                <div className="relative flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-500 p-0.5 shadow-[0_0_20px_rgba(6,182,212,0.4)] group-hover/orb:scale-110 transition-transform duration-500">
+                    <div className="w-full h-full bg-[#08090C] rounded-full flex items-center justify-center">
+                      <Mic className="w-4 h-4 text-cyan-300 animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-span-7 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] font-mono text-text-secondary-dark flex items-center gap-1">
+                  <Volume2 className="w-3 h-3 text-purple-400" /> Live Waveform
+                </span>
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                  EN • HI • HINGLISH
+                </span>
+              </div>
+
+              {/* Simulated Live Audio Spectrum Bars */}
+              <div className="flex items-end gap-1 h-8 px-2 py-1 bg-[#0E121D] rounded-lg border border-[#1E2335]">
+                {[35, 65, 90, 55, 80, 100, 65, 85, 40, 75, 60, 85, 50, 70].map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 bg-gradient-to-t from-cyan-500 to-purple-500 rounded-full"
+                    style={{ height: `${h}%` }}
+                  />
+                ))}
+              </div>
+
+              <div className="flex items-center gap-2 text-[9px] font-mono text-text-secondary-dark">
+                <span className="text-emerald-400 font-semibold">● Instant Barge-In</span>
+                <span className="text-gray-500">|</span>
+                <span>WebM Opus 48kHz</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Metadata */}
+          <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary-dark/70 border-t border-[#1A1D28] pt-2.5 relative z-10">
+            <span className="flex items-center gap-1">
+              <Cpu className="w-3 h-3 text-cyan-400" /> Groq LPU + Whisper v3 + Llama-3.3
+            </span>
+            <span className="text-cyan-400">● Sub-300ms</span>
+          </div>
+        </div>
+      );
+    }
+
     if (id === 'lush-jewels') {
       return (
         <div className="w-full h-full bg-[#08090C] relative flex flex-col justify-between p-5 select-none overflow-hidden font-sans">
