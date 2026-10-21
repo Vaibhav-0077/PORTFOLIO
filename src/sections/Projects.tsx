@@ -5,7 +5,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { SectionHeader } from '../components/SectionHeader';
 import { Layers } from 'lucide-react';
 
-const CATEGORIES = ['All', 'Full-Stack E-Commerce', 'React & API Architecture', 'Desktop Software Architecture', 'Frontend Engineering'];
+const CATEGORIES = ['All', 'Realtime AI & WebRTC', 'Full-Stack E-Commerce', 'React & API Architecture', 'Desktop Software Architecture', 'Frontend Engineering'];
 
 export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
