@@ -35,7 +35,7 @@ export const ProjectDetail: React.FC = () => {
   const project = projectId ? PROJECT_DETAILS[projectId] : null;
 
   // List of all project keys in order for navigation
-  const projectKeys = ['lush-jewels', 'country-explorer', 'hotel-management', 'amazon-replica'];
+  const projectKeys = ['vaani-ai', 'lush-jewels', 'country-explorer', 'hotel-management', 'amazon-replica'];
   const currentIndex = projectKeys.indexOf(projectId || '');
   const prevProjectKey = currentIndex > 0 ? projectKeys[currentIndex - 1] : projectKeys[projectKeys.length - 1];
   const nextProjectKey = currentIndex < projectKeys.length - 1 ? projectKeys[currentIndex + 1] : projectKeys[0];
