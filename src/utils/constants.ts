@@ -40,6 +40,30 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'vaani-ai',
+    title: 'Vaani-AI',
+    category: 'Realtime AI & WebRTC',
+    subtitle: 'Low-latency conversational voice & chat agent with Groq LPU, WebRTC & multilingual speech.',
+    description: 'Production-quality realtime conversational AI system enabling fluid, full-duplex voice calls and chat dictation in English, Hindi, and Hinglish. Features sub-300ms Whisper STT via Groq LPU, RMS voice activity detection, dynamic audio visualizers, and instant barge-in playback interruption.',
+    tech: ['React 19', 'TypeScript', 'LiveKit WebRTC', 'Groq Cloud', 'Whisper Large v3', 'Llama-3.3-70B', 'Node.js', 'Python'],
+    features: [
+      'Live full-duplex WebRTC voice call with continuous low-latency audio streaming',
+      'In-input voice dictation for instant speech-to-text directly inside the chat field',
+      'Native trilingual support across English, Hindi, and colloquial Hinglish',
+      'Sub-300ms turnaround latency powered by Groq LPU hardware acceleration',
+      'Web Audio API Time-Domain RMS Voice Activity Detection (VAD) with 800ms silence threshold',
+      'Instant barge-in / interruption: Assistant immediately halts playback when speech is detected',
+      'Dynamic real-time audio waveform and ambient orb responsive to voice amplitude',
+    ],
+    problem: 'Traditional push-to-talk chatbots introduce awkward 2-3s turnaround lags, lack native colloquial Hindi/Hinglish understanding, and cannot be interrupted when speaking.',
+    solution: 'Engineered an ultra-low-latency full-duplex pipeline unifying LiveKit WebRTC, client-side Web Audio RMS VAD, Groq Whisper Large v3 Turbo (~200ms), and Llama-3.3-70B with instant barge-in.',
+    challenges: 'Preventing silence/background-noise hallucination in Whisper, synchronizing WebM Opus audio buffers without packet loss, and managing instant speech cancellation during active playback.',
+    learned: 'Gained mastery over WebRTC streaming protocols, client-side DSP RMS analysis, Groq LPU inference optimization, LiveKit agent lifecycles, and low-latency voice pipeline architecture.',
+    liveUrl: 'https://vaani-ai-2jr9.onrender.com/',
+    githubUrl: 'https://github.com/Vaibhav-0077/Vaani-AI',
+    featured: true,
+  },
+  {
     id: 'lush-jewels',
     title: 'Lush Jewels',
     category: 'Full-Stack E-Commerce',
