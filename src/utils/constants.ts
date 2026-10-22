@@ -11,7 +11,7 @@ export const PERSONAL_INFO = {
     { label: 'Location', value: 'Mumbai, IN' },
     { label: 'Status', value: 'Open for Roles' },
   ],
-  interests: ['3D Web Experiences', 'Full-Stack Architecture', 'UI/UX Crafting', 'API Systems'],
+  interests: ['Realtime AI & Voice Agents', 'Full-Stack Architecture', '3D Web Experiences', 'UI/UX Crafting', 'API Systems'],
 };
 
 export const SOCIAL_LINKS = {
@@ -198,6 +198,15 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { name: 'Vite', desc: 'Module bundling, fast Hot Module Replacement, optimized builds' },
       { name: 'Cloudinary', desc: 'Cloud storage pipelines, media transformation filters' },
       { name: 'Razorpay', desc: 'Secure payment routing, webhooks verification' },
+    ],
+  },
+  {
+    category: 'Realtime & AI Engineering',
+    items: [
+      { name: 'LiveKit WebRTC', desc: 'Full-duplex audio channels, low-latency room streaming, data tracks' },
+      { name: 'Groq Cloud & LPUs', desc: 'Sub-200ms Whisper Large v3 Turbo STT, streaming Llama-3.3 inference' },
+      { name: 'Web Audio API (DSP)', desc: 'Client-side time-domain RMS Voice Activity Detection, audio buffers' },
+      { name: 'Python 3', desc: 'Modular agent architecture, livekit-agents orchestrator, async pipelines' },
     ],
   },
 ];
