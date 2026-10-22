@@ -235,7 +235,7 @@ export const About: React.FC = () => {
                 </div>
                 <div className="pl-4">
                   <span className="text-[#E06C75]">specialization</span>:{' '}
-                  <span className="text-[#56B6C2]">['MongoDB', 'Express', 'React', 'Node']</span>,
+                  <span className="text-[#56B6C2]">['MERN Stack', 'LiveKit WebRTC', 'AI Voice Systems']</span>,
                 </div>
                 <div className="pl-4">
                   <span className="text-[#E06C75]">philosophies</span>:{' '}
@@ -244,6 +244,10 @@ export const About: React.FC = () => {
                 <div className="pl-8">
                   <span className="text-[#E06C75]">architecture</span>:{' '}
                   <span className="text-[#98C379]">'Modular &amp; Scalable'</span>,
+                </div>
+                <div className="pl-8">
+                  <span className="text-[#E06C75]">realtimeAI</span>:{' '}
+                  <span className="text-[#98C379]">'Sub-300ms Voice Pipelines'</span>,
                 </div>
                 <div className="pl-8">
                   <span className="text-[#E06C75]">animations</span>:{' '}
