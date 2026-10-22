@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ArrowRight, ChevronLeft, ChevronRight, X, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import type { TechItem } from '../../data/techStackData';
 import { renderBrandIcon } from './TechBrandIcons';
 
@@ -21,11 +22,17 @@ export const TechInspector: React.FC<TechInspectorProps> = ({
   onNext,
   onClose,
 }) => {
-  const scrollToProjects = (e: React.MouseEvent) => {
+  const navigate = useNavigate();
+
+  const handleProjectClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const el = document.getElementById('projects');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (selectedTech.project.projectId && selectedTech.project.projectId !== 'all') {
+      navigate(`/project/${selectedTech.project.projectId}`);
+    } else {
+      const el = document.getElementById('projects');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -103,7 +110,7 @@ export const TechInspector: React.FC<TechInspectorProps> = ({
             </span>
             <a
               href="#projects"
-              onClick={scrollToProjects}
+              onClick={handleProjectClick}
               className="p-3 rounded-2xl border border-purple-500/20 bg-purple-50/50 dark:bg-purple-950/20 hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-200 flex items-center justify-between group cursor-pointer"
             >
               <div className="flex items-center gap-2.5">

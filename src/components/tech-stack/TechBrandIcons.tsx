@@ -82,6 +82,19 @@ export const RestApiIcon: React.FC<IconProps> = ({ className = 'w-6 h-6' }) => (
   </div>
 );
 
+export const WebRtcIcon: React.FC<IconProps> = ({ className = 'w-6 h-6' }) => (
+  <div className={`${className} bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-md flex items-center justify-center font-mono font-bold text-white text-[9px] leading-none select-none shadow-sm`}>
+    <span>RTC</span>
+  </div>
+);
+
+export const PythonIcon: React.FC<IconProps> = ({ className = 'w-6 h-6' }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="none">
+    <path d="M11.91 2C6.98 2 7.29 4.14 7.29 4.14v2.22h4.71v.67H5.29S2 6.64 2 11.57c0 4.93 2.87 4.75 2.87 4.75h1.71v-2.39s-.09-2.87 2.81-2.87h4.82s2.69.04 2.69-2.61V4.66S17.43 2 11.91 2zm-1.34 1.45c.48 0 .86.39.86.86 0 .48-.39.86-.86.86-.48 0-.86-.39-.86-.86 0-.48.38-.86.86-.86z" fill="#3776AB"/>
+    <path d="M12.09 22c4.93 0 4.62-2.14 4.62-2.14v-2.22H12v-.67h6.71S22 17.36 22 12.43c0-4.93-2.87-4.75-2.87-4.75h-1.71v2.39s.09 2.87-2.81 2.87H9.79s-2.69-.04-2.69 2.61v3.79S6.57 22 12.09 22zm1.34-1.45c-.48 0-.86-.39-.86-.86 0-.48.39-.86.86-.86.48 0 .86.39.86.86 0 .48-.39.86-.86.86z" fill="#FFD43B"/>
+  </svg>
+);
+
 export const renderBrandIcon = (iconId: string, className = 'w-6 h-6') => {
   switch (iconId) {
     case 'react':
@@ -104,6 +117,10 @@ export const renderBrandIcon = (iconId: string, className = 'w-6 h-6') => {
       return <CloudinaryIcon className={className} />;
     case 'git':
       return <GitIcon className={className} />;
+    case 'webrtc':
+      return <WebRtcIcon className={className} />;
+    case 'python':
+      return <PythonIcon className={className} />;
     case 'restapi':
     default:
       return <RestApiIcon className={className} />;

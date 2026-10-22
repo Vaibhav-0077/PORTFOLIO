@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Box, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import type { TechItem } from '../../data/techStackData';
 import { renderBrandIcon } from './TechBrandIcons';
 
@@ -32,6 +33,8 @@ export const TechGraph: React.FC<TechGraphProps> = ({
   activeCategory,
   onSelectTech,
 }) => {
+  const navigate = useNavigate();
+
   // Center Hub position
   const centerPos = { x: 50, y: 50 };
 
@@ -47,6 +50,21 @@ export const TechGraph: React.FC<TechGraphProps> = ({
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const handleCapsuleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (selectedTech.project.projectId && selectedTech.project.projectId !== 'all') {
+      navigate(`/project/${selectedTech.project.projectId}`);
+    } else {
+      scrollToProjects(e);
+    }
+  };
+
+  const projectInitials = useMemo(() => {
+    const parts = selectedTech.project.name.split(/[\s-]+/).filter(Boolean);
+    if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+    return selectedTech.project.name.slice(0, 2).toUpperCase();
+  }, [selectedTech.project.name]);
 
   return (
     <div className="w-full flex flex-col gap-4">
@@ -223,48 +241,36 @@ export const TechGraph: React.FC<TechGraphProps> = ({
           </div>
         </div>
 
-        {/* Right Side: Capsule Project Preview */}
+        {/* Right Side: Dynamic Capsule Project Preview */}
         <a
           href="#projects"
-          onClick={scrollToProjects}
+          onClick={handleCapsuleClick}
           className="flex items-center gap-3 px-3 py-1.5 rounded-full border border-purple-500/20 bg-slate-50 dark:bg-[#131726] hover:border-purple-500/40 hover:bg-purple-500/10 transition-all duration-200 group cursor-pointer"
         >
-          {/* Circular project badge */}
-          <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-[10px] font-extrabold text-white">
-            LJ
+          {/* Circular dynamic project badge */}
+          <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-[10px] font-extrabold text-white shrink-0">
+            {projectInitials}
           </div>
 
           {/* Project titles */}
           <div className="text-left">
             <span className="block text-xs font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
-              Lush Jewels
+              {selectedTech.project.name}
             </span>
             <span className="block text-[10px] text-slate-500 dark:text-slate-400">
-              Full-Stack E-Commerce
+              {selectedTech.project.type}
             </span>
           </div>
 
-          {/* Mini Tech Stack Icons */}
+          {/* Active Tech Brand Icon */}
           <div className="flex items-center gap-1.5 pl-1.5 border-l border-slate-200 dark:border-slate-700">
             <div className="w-4 h-4 rounded flex items-center justify-center">
-              {renderBrandIcon('react', 'w-3.5 h-3.5')}
-            </div>
-            <div className="w-4 h-4 rounded flex items-center justify-center">
-              {renderBrandIcon('nodejs', 'w-3.5 h-3.5')}
-            </div>
-            <div className="w-4 h-4 rounded flex items-center justify-center">
-              {renderBrandIcon('express', 'w-3.5 h-3.5')}
-            </div>
-            <div className="w-4 h-4 rounded flex items-center justify-center">
-              {renderBrandIcon('mongodb', 'w-3.5 h-3.5')}
-            </div>
-            <div className="w-4 h-4 rounded flex items-center justify-center">
-              {renderBrandIcon('cloudinary', 'w-3.5 h-3.5')}
+              {renderBrandIcon(selectedTech.id, 'w-3.5 h-3.5')}
             </div>
           </div>
 
           {/* Arrow */}
-          <div className="w-5 h-5 rounded-full bg-purple-500/15 text-purple-600 dark:text-purple-300 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white transition-all">
+          <div className="w-5 h-5 rounded-full bg-purple-500/15 text-purple-600 dark:text-purple-300 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white transition-all shrink-0">
             <ArrowRight className="w-3 h-3" />
           </div>
         </a>
