@@ -4,8 +4,10 @@ import { Sparkles } from 'lucide-react';
 const MARQUEE_ITEMS = [
   'UI/UX Craftsmanship',
   'Scalable APIs',
+  'Realtime AI & Voice',
   'Clean Code',
   'MERN Stack',
+  'WebRTC Pipelines',
   'Performance Optimization',
   '3D Web Experiences',
   'Responsive Design',
